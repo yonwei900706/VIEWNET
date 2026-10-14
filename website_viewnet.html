@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewnet Computer System SDN BHD | Pakar Custom PC Gaming</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Inter & Orbitron for Gaming Vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0b0d14',
+                        brandCard: '#151926',
+                        brandCyan: '#00f0ff',
+                        brandGold: '#ffb700',
+                        brandGreen: '#00ffaa',
+                        brandAccent: '#7928ca'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        gaming: ['Orbitron', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar & glassmorphism effect */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbfafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f6f5f7;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
+        }
+        .glass-panel {
+            background: rgba(21, 25, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+        }
+        .glow-gold {
+            box-shadow: 0 0 20px rgba(255, 183, 0, 0.25);
+        }
+        .glow-green {
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.25);
+        }
+        .tab-active {
+            border-bottom: 2px solid #00f0ff;
+            color: #00f0ff !important;
+        }
+    </style>
+</head>
+        
+<!-- Banner Utama dengan Video Berbunyi -->
+<section class="relative bg-black text-white py-16 px-6 md:px-16 overflow-hidden flex items-center min-h-[550px]">
+    
+    <!-- Video Latar Belakang (Tanpa atribut 'muted', ditambah 'controls' atau dibiar interaktif) -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-50 z-0">
+        <!-- Gantikan 'videos/banner-video.mp4' dengan nama fail video yang anda upload -->
+        <source src="260012 (1).mp4" type="video/mp4">
+        Pelayar anda tidak menyokong paparan video.
+    </video>
+
+    <!-- Lapisan Gelap (Overlay nipis supaya teks kekal jelas jika diperlukan) -->
+    <div class="absolute inset-0 bg-black/40 pointer-events-none z-10"></div>
+
+    <!-- Kandungan Banner (Teks & Butang) -->
+    <div class="relative max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-20 pointer-events-auto">
+        
+        <!-- Bahagian Kiri: Tajuk & Info -->
+        <!-- Tambah kelas 'ml-auto text-left' pada div utama teks -->
+<div class="space-y-6 ml-auto max-w-xl text-left">
+    <!-- Kandungan teks anda di sini -->
+</div>
+            <p class="text-gray-200 text-sm md:text-base font-medium tracking-wide uppercase">
+                Malaysia's No.1 Gaming PC Workshop
+            </p>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-lg">
+                Crafting <span class="text-red-600">500+</span><br>Units Gaming PC Monthly
+            </h1>
+
+            <ul class="space-y-2 text-gray-100 text-sm md:text-base font-light drop-shadow">
+                <li class="flex items-center gap-2">
+                    <span class="text-red-500 font-bold">-</span> Free Lifetime Support/Services
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="text-red-500 font-bold">-</span> Expert Quality Control
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="text-red-500 font-bold">-</span> Full Year 1-to-1 Exchange Warranty
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="text-red-500 font-bold">-</span> Free Nationwide Delivery & Installation
+                </li>
+            </ul>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" onclick="switchTab('home')" class="flex items-center gap-2">
+    <img src="viewnet-logo.png" alt="Viewnet" class="h-20 w-auto object-contain">
+</a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                <button onclick="switchPage('utama')" id="nav-utama" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-gray-800 text-brandCyan">Main</Main></button>
+                <button onclick="switchPage('pakej')" id="nav-pakej" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-gray-800 text-gray-300">PC Package</button>
+                <button onclick="switchPage('builder')" id="nav-builder" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-gray-800 text-gray-300">Custom Your Own</button>
+                <button onclick="switchPage('shopee')" id="nav-shopee" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-gray-800 text-gray-300">PC Build Gallery</button>
+                
+            </nav>
+
+            <!-- Action Button & Mobile Toggle -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/60167866447?text=Hai%20Viewnet,%20saya%20nak%20tanya%20tentang%20PC" target="_blank" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-brandGreen text-black font-bold text-sm hover:bg-emerald-400 transition-all shadow-md glow-green">
+                    <i class="fa-brands me-1 fa-whatsapp text-lg"></i> WhatsApp
+                </a>
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-gray-800 text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-800 bg-brandDark px-4 pt-2 pb-4 space-y-2">
+            <button onclick="switchPage('utama'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-gray-300 hover:bg-gray-800">Main</Main></button>
+            <button onclick="switchPage('pakej'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-gray-300 hover:bg-gray-800">PC Package</button>
+            <button onclick="switchPage('builder'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-gray-300 hover:bg-gray-800">Custom Your Own</button>
+            <button onclick="switchPage('shopee'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-gray-300 hover:bg-gray-800">PC Parts</button>
+            <button onclick="switchPage('ansuran'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-base font-semibold text-gray-300 hover:bg-gray-800">Apply Ansuran</button>
+            <a href="https://wa.me/60167866447?text=Hai%20Viewnet" target="_blank" class="flex items-center justify-center gap-2 w-full mt-2 py-3 rounded-lg bg-brandGreen text-black font-bold text-sm">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Kami di WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+
+        <!-- ================= PAGE 1: UTAMA ================= -->
+        <section id="page-utama" class="page-content space-y-20 pb-16">
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-brandCard to-brandDark border-b border-gray-800">
+                <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#00f0ff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brandCyan/10 border border-brandCyan/30 text-brandCyan text-xs font-semibold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-brandCyan animate-ping"></span> Kedai PC No.1 Pilihan Gamers
+                        </div>
+                        <h1 class="font-gaming text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
+                            PAKAR <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandCyan via-brandGreen to-brandGold">CUSTOM PC</span> GAMING
+                        </h1>
+                        <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                            Dapatkan PC Gaming idaman anda secara ANSURAN. Tanpa deposit, proses yang pantas!
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <button onclick="switchPage('pakej')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brandCyan to-blue-600 text-black font-extrabold text-base hover:opacity-90 transition-all shadow-lg glow-cyan flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-gamepad"></i> Lihat Pakej PC
+                            </button>
+                            <button onclick="switchPage('ansuran')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-800 border border-brandGold/50 text-brandGold font-bold text-base hover:bg-gray-700 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-invoice-dollar"></i> Semak Kelayakan Ansuran
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Hero Showcase Box -->
+                    <div class="relative mb-12 sm:mb-16"> <!-- Tambah mb-12 atau mb-16 di sini -->
+                        <div class="relative">
+                            <div class="relative glass-panel rounded-3xl p-6 border border-brandCyan/30 shadow-2xl overflow-hidden group">
+                            <!-- Gambar Dynamic (Ditambah id="popular-img") -->
+                            <img id="popular-img" src="image/lagenda 1 fullset.jpeg" alt="PC Gaming Build" class="rounded-2xl w-full h-auto object-cover group-hover:scale-105 transition-all duration-500">
+        
+                            <!-- Badge -->
+                            <div class="absolute top-10 right-10 bg-black/80 backdrop-blur-md px-4 py-2 rounded-xl border border-brandGold text-brandGold font-gaming font-bold text-sm">
+                                🔥 PAKEJ POPULAR 2026
+                            </div>
+        
+                            <!-- Info Dynamic -->
+                            <div class="mt-6 flex justify-between items-center">
+                                <div>
+                                    <!-- Tajuk Dynamic (Ditambah id="popular-title") -->
+                                    <h3 id="popular-title" class="text-xl font-bold font-gaming text-white">LAGENDA 1 FULLSET</h3>
+                                    <!-- Spec Dynamic (Ditambah id="popular-spec") -->
+                                    <p id="popular-spec" class="text-sm text-gray-400">AMD Ryzen 5 5500 • RTX3050 6GB • 16GB RAM</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-gray-400">Ansuran Dari</p>
+                                    <!-- Harga Dynamic (Ditambah id="popular-price") -->
+                                    <p id="popular-price" class="text-2xl font-black text-brandGreen font-gaming">RM182<span class="text-xs text-gray-400 font-normal">/bln</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Highlights -->
+            <div class="relative mb-12 sm:mb-16"> <!-- Tambah mb-12 atau mb-16 di sini -->
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-brandCyan/40 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-brandCyan/10 text-brandCyan flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Ansuran Mudah & Pantas</h3>
+                            <p class="text-sm text-gray-400">Kelulusan permohonan seawal 24 jam. Tanpa kad kredit, hanya perlukan IC & Slip Gaji sahaja.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-brandGold/40 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-brandGold/10 text-brandGold flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Waranti Terjamin</h3>
+                            <p class="text-sm text-gray-400">Semua komponen adalah 100% Baru & Original dengan waranti kilang sehingga 3-5 tahun.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-brandGreen/40 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-brandGreen/10 text-brandGreen flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Cable Management</h3>
+                            <p class="text-sm text-gray-400">Setiap PC dipasang oleh technician dengan cable management yang mantap dan airfolw yang perfect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="relative mb-12 sm:mb-16"> <!-- Tambah mb-12 atau mb-16 di sini -->
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center space-y-3 mb-12">
+                        <h2 class="font-gaming text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brandCyan to-brandGreen">VIEWNET MEMBER EXCLUSIVE SERVICES</h2>
+                        <p class="text-gray-400 text-sm">Bukan sekadar menjual, kami juga menyediakan perkhidmatan teknikal menyeluruh.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="glass-panel p-6 rounded-2xl text-center space-y-3 hover:scale-105 transition-transform">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <h4 class="font-bold text-white">Repair & Troubleshooting</h4>
+                            <p class="text-xs text-gray-400">Selesaikan masalah 'No Display', PC lagging, BSOD, dan masalah-masalah lain.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl text-center space-y-3 hover:scale-105 transition-transform">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h4 class="font-bold text-white">Hardware Upgrade</h4>
+                            <p class="text-xs text-gray-400">Tukar GPU, tambah RAM, tukar SSD, atau reformat PC.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl text-center space-y-3 hover:scale-105 transition-transform">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+                            <h4 class="font-bold text-white">Deep Cleaning & Thermal</h4>
+                            <p class="text-xs text-gray-400">Cuci habuk secara menyeluruh & tukar thermal paste.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl text-center space-y-3 hover:scale-105 transition-transform">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                            <h4 class="font-bold text-white">Custom Watercooling</h4>
+                            <p class="text-xs text-gray-400">Servis pemasangan Custom Watercooling untuk PC premium.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Review 5-Star Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brandGold/30 relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 pb-8 border-b border-gray-800">
+                        <div class="space-y-2 text-center md:text-left">
+                            <div class="flex items-center justify-center md:justify-start gap-2 text-brandGold text-xl">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="font-bold text-white text-lg ml-2">5.0 / 5.0</span>
+                            </div>
+                            <h3 class="text-2xl font-bold font-gaming text-white">GOOGLE REVIEW CUSTOMER</h3>
+                            <p class="text-xs text-gray-400">Ramai pelanggan berpuas hati dengan servis Lagenda Komputer</p>
+                        </div>
+                        <a href="https://google.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-white text-black font-bold text-xs flex items-center gap-2 hover:bg-gray-200 transition-colors">
+                            <i class="fa-brands fa-google text-red-500 text-sm"></i> Semak di Google Maps
+                        </a>
+                    </div>
+
+                    <!-- Reviews Carousel/Grid -->
+                    <!-- GOOGLE REVIEW SECTION -->
+                    <section class="py-16 bg-brandDark/50">
+                        <div class="container mx-auto px-4">
+        
+                            <!-- Header Review -->
+                            <div class="text-center mb-8">
+                                <h2 class="text-3xl md:text-4xl font-bold font-gaming text-white">APA KATA PELANGGAN KAMI</h2>
+                                <p class="text-gray-400 mt-2">Ulasan jujur 5-Bintang daripada pembeli PC Lagenda Computer</p>
+                            </div>
+
+                            <!-- WIDGET ELFSIGHT ANDA DI SINI -->
+                            <div class="elfsight-app-63265b81-4f8d-4f84-a33d-9f917411ffac" data-elfsight-app-lazy></div>
+
+                        </div>
+                    </section>
+
+                    <!-- Pindahkan skrip Elfsight ke bahagian bawah (sebelum </body>) atau simpan di sini tetapi pastikan defer/async -->
+                    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: PAKEJ PC ================= -->
+    <section id="page-pakej" class="page-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+        <div class="text-center space-y-3">
+            <h1 class="font-gaming text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brandCyan via-white to-brandGreen">
+                VIEWNET GAMING PC PACKAGE
+            </h1>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto">
+                Pilih pakej siap bina berspesifikasi tinggi mengikut bajet anda. Boleh beli terus secara Cash atau Mohon Ansuran Bulanan.
+            </p>
+
+            <!-- Filter Tabs -->
+            <div class="inline-flex p-1.5 rounded-xl bg-brandCard border border-gray-800 mt-4">
+                <button id="tab-ansuran" onclick="togglePakejTab('ansuran')" class="px-6 py-2.5 rounded-lg text-sm font-bold transition-all bg-brandCyan text-black">
+                    💳 Monthly PC Package 
+                </button>
+                
+            </div>
+        </div>
+
+        <!-- Ansuran Package Grid -->
+        <div id="pakej-ansuran-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Ansuran Gambar 1 -->
+            <div class="glass-panel rounded-2xl p-4 border border-brandGreen/40 flex flex-col justify-between relative group hover:border-brandGreen transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/ansuran-gold.jpg' kepada nama fail gambar anda -->
+                    <img src="2 AMD PC SET OCT 26 - ARES-G.png" alt="Lagenda 1 Fullset Ansuran" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="switchPage('ansuran')" class="w-full py-3 rounded-xl bg-gradient-to-r from-brandGreen to-teal-600 text-black font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pen"></i> WhatsApp
+                </button>
+            </div>
+
+            <!-- Ansuran Gambar 2 -->
+            <div class="glass-panel rounded-2xl p-4 border border-brandGreen/40 flex flex-col justify-between relative group hover:border-brandGreen transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/ansuran-gold.jpg' kepada nama fail gambar anda -->
+                    <img src="3 AMD PC SET OCT 26 - PERSEUS.png" alt="Lagenda 2 Fullset Ansuran" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="switchPage('ansuran')" class="w-full py-3 rounded-xl bg-gradient-to-r from-brandGreen to-teal-600 text-black font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pen"></i> WhatsApp
+                </button>
+            </div>
+
+            <!-- Ansuran Gambar 3 -->
+            <div class="glass-panel rounded-2xl p-4 border border-brandGreen/40 flex flex-col justify-between relative group hover:border-brandGreen transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/ansuran-gold.jpg' kepada nama fail gambar anda -->
+                    <img src="2 INVASION+ PC SET OCT 26 - AETHER.png" alt="Lagenda 3 Fullset Ansuran" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="switchPage('ansuran')" class="w-full py-3 rounded-xl bg-gradient-to-r from-brandGreen to-teal-600 text-black font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pen"></i> WhatsApp
+                </button>
+            </div>
+
+            <!-- Ansuran Gambar 4 -->
+            <div class="glass-panel rounded-2xl p-4 border border-brandGreen/40 flex flex-col justify-between relative group hover:border-brandGreen transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/ansuran-gold.jpg' kepada nama fail gambar anda -->
+                    <img src="3 INVASION+ PC SET OCT 26 - ARES-P.png" alt="Lagenda 4 Fullset Ansuran" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="switchPage('ansuran')" class="w-full py-3 rounded-xl bg-gradient-to-r from-brandGreen to-teal-600 text-black font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pen"></i> WhatsApp
+                </button>
+            </div>
+
+            <!-- Ansuran Gambar 5 -->
+            <div class="glass-panel rounded-2xl p-4 border border-brandGreen/40 flex flex-col justify-between relative group hover:border-brandGreen transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/ansuran-gold.jpg' kepada nama fail gambar anda -->
+                    <img src="2 VN PC SET OCT 26 - A1.png" alt="Lagenda 5 Fullset Ansuran" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="switchPage('ansuran')" class="w-full py-3 rounded-xl bg-gradient-to-r from-brandGreen to-teal-600 text-black font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pen"></i> WhatsApp
+                </button>
+            </div>
+
+            <!-- Ansuran Gambar 6 -->
+            <div class="glass-panel rounded-2xl p-4 border border-brandGreen/40 flex flex-col justify-between relative group hover:border-brandGreen transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/ansuran-gold.jpg' kepada nama fail gambar anda -->
+                    <img src="4 VN PC SET OCT 26 - A3 (1).png" alt="Lagenda 6 Fullset Ansuran" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="switchPage('ansuran')" class="w-full py-3 rounded-xl bg-gradient-to-r from-brandGreen to-teal-600 text-black font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pen"></i> WhatsApp
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Cash Package Grid (Hidden by Default) -->
+        <div id="pakej-cash-container" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Cash Gambar 1 -->
+            <div class="glass-panel rounded-2xl p-4 border border-gray-800 flex flex-col justify-between group hover:border-brandCyan transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/cash-starter.jpg' kepada nama fail gambar anda -->
+                    <img src="images/cash-starter.jpg" alt="Gamer Starter Pack Cash" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="orderViaWhatsapp('Pakej Cash Gamer Starter Pack')" class="w-full py-2.5 rounded-xl bg-brandGreen text-black font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Beli Cash
+                </button>
+            </div>
+
+            <!-- Cash Gambar 2 -->
+            <div class="glass-panel rounded-2xl p-4 border border-brandCyan flex flex-col justify-between group hover:border-brandCyan transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/cash-beast.jpg' kepada nama fail gambar anda -->
+                    <img src="images/cash-beast.jpg" alt="Lagenda Beast Cash" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="orderViaWhatsapp('Pakej Cash Lagenda Beast')" class="w-full py-2.5 rounded-xl bg-brandGreen text-black font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Beli Cash
+                </button>
+            </div>
+
+            <!-- Cash Gambar 3 -->
+            <div class="glass-panel rounded-2xl p-4 border border-gray-800 flex flex-col justify-between group hover:border-brandGold transition-all">
+                <div class="overflow-hidden rounded-xl border border-gray-800 mb-4 bg-gray-900">
+                    <!-- Tukar 'images/cash-overlord.jpg' kepada nama fail gambar anda -->
+                    <img src="images/cash-overlord.jpg" alt="Lagenda Overlord Cash" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <button onclick="orderViaWhatsapp('Pakej Cash Lagenda Overlord')" class="w-full py-2.5 rounded-xl bg-brandGreen text-black font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Beli Cash
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- ================= PAGE 3: CUSTOM PC BUILDER ================= -->
+    <section id="page-builder" class="page-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="text-center space-y-3 mb-8">
+                <h1 class="font-gaming text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brandCyan via-brandGold to-brandGreen">
+                    CUSTOM PC BUILDER
+                </h1>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                    Pilih komponen pilihan anda. Sistem pintar kami akan menyemak kelayakan keserasian (**compatibility check**) secara automatik!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Builder Selection Panel (2 Columns on Large Screens) -->
+                <div class="lg:col-span-2 space-y-6">
+
+                    <!-- Step 1: Processor -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <label class="block text-xs font-bold text-brandCyan uppercase tracking-wider mb-2">1. Processor (CPU)</label>
+                        <select id="select-cpu" onchange="handleCpuChange()" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none">
+                            <option value="">-- Pilih Processor --</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 2: Motherboard (Auto Filtered) -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-bold text-brandCyan uppercase tracking-wider">2. Motherboard (MOBO)</label>
+                            <span id="mobo-badge" class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Pilih CPU dahulu</span>
+                        </div>
+                        <select id="select-mobo" onchange="handleMoboChange()" disabled class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none disabled:opacity-50">
+                            <option value="">-- Pilih Motherboard --</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 3: RAM (Auto Filtered DDR4/DDR5) -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-bold text-brandCyan uppercase tracking-wider">3. Memory (RAM)</label>
+                            <span id="ram-badge" class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Pilih MOBO dahulu</span>
+                        </div>
+                        <select id="select-ram" onchange="updateBuilderSummary()" disabled class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none disabled:opacity-50">
+                            <option value="">-- Pilih RAM --</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 4: Storage -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <label class="block text-xs font-bold text-brandCyan uppercase tracking-wider mb-2">4. Storage (NVMe M.2 SSD)</label>
+                        <select id="select-ssd" onchange="updateBuilderSummary()" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none">
+                            <option value="">-- Pilih Storage --</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 5: GPU -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <label class="block text-xs font-bold text-brandCyan uppercase tracking-wider mb-2">5. Graphic Card (GPU)</label>
+                        <select id="select-gpu" onchange="handleGpuChange()" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none">
+                            <option value="">-- Pilih Graphic Card --</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 6: Power Supply (PSU - Auto Wattage Calculation) -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-bold text-brandCyan uppercase tracking-wider">6. Power Supply (PSU)</label>
+                            <span id="psu-badge" class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Auto Calculate Wattage</span>
+                        </div>
+                        <select id="select-psu" onchange="updateBuilderSummary()" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none">
+                            <option value="">-- Pilih Power Supply --</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 7: CPU Cooler -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <label class="block text-xs font-bold text-brandCyan uppercase tracking-wider mb-2">7. CPU Cooler</label>
+                        <select id="select-cooler" onchange="updateBuilderSummary()" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none">
+                            <option value="">-- Pilih CPU Cooler --</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 8: Casing (Auto disable mATX if ATX mobo selected) -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-bold text-brandCyan uppercase tracking-wider">8. Casing</label>
+                            <span id="casing-badge" class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded">All Form Factors</span>
+                        </div>
+                        <select id="select-casing" onchange="updateBuilderSummary()" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-brandCyan focus:outline-none">
+                            <option value="">-- Pilih Casing --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Live Summary & Receipt Box Sidebar -->
+                <div class="sticky top-28 glass-panel p-6 rounded-3xl border border-brandCyan/30 space-y-6">
+                    <div class="border-b border-gray-800 pb-4">
+                        <h3 class="font-gaming text-lg font-bold text-white flex items-center justify-between">
+                            <span>RINGKASAN SPEC</span>
+                            <i class="fa-solid fa-list-check text-brandCyan"></i>
+                        </h3>
+                        <p class="text-xs text-gray-400 mt-1">Senarai barang pilihan anda</p>
+                    </div>
+
+                    <!-- Selected items breakdown list -->
+                    <div id="builder-list" class="space-y-3 text-xs text-gray-300 max-h-80 overflow-y-auto pr-1">
+                        <p class="text-gray-500 italic text-center py-6">Sila pilih komponen di sebelah kiri.</p>
+                    </div>
+
+                    <!-- Price & Actions -->
+                    <div class="border-t border-gray-800 pt-4 space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-sm font-bold text-gray-300">JUMLAH ANGGARAN:</span>
+                            <span id="builder-total-price" class="font-gaming text-2xl font-black text-brandGreen">RM 0</span>
+                        </div>
+
+                        <div class="space-y-2">
+                            <button onclick="sendCustomSpecWhatsapp()" class="w-full py-3.5 rounded-xl bg-brandGreen text-black font-extrabold text-xs flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all shadow-md">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Hantar Spec ke WhatsApp
+                            </button>
+                            <button onclick="resetBuilder()" class="w-full py-2 rounded-xl bg-gray-800 text-gray-400 hover:text-white font-bold text-xs transition-all">
+                                <i class="fa-solid fa-rotate-right me-1"></i> Reset Pilihan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- Page 4: PC Build Gallery -->
+    <section>
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight">
+                    PC Build Gallery <span class="text-purple-400">Viewnet
+                </h2>
+                <p class="text-gray-400 mt-2 text-sm">Koleksi gambar eksklusif binaan PC peribadi. Klik gambar untuk paparan besar.</p>
+            </div>
+
+            <!-- Grid Galeri Utama -->
+            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+        <!-- Modal Pop-Up Viewer (Untuk Tonton Gambar Besar) -->
+        <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+            <!-- Butang Tutup -->
+            <button onclick="closeImageModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-3xl font-bold p-2 focus:outline-none z-10">
+                &times;
+            </button>
+
+            <div class="max-w-4xl w-full flex flex-col items-center">
+                <!-- Gambar Utama Besar -->
+                <div class="relative max-h-[75vh] overflow-hidden rounded-2xl border border-purple-500/30 bg-gray-900 shadow-2xl mb-4">
+                    <img id="modal-active-img" src="" alt="View PC Build" class="max-h-[75vh] w-auto object-contain">
+                </div>
+
+                <!-- Tajuk & Penerangan -->
+                <h3 id="modal-title" class="text-xl font-bold text-white mb-2"></h3>
+
+                <!-- Senarai Gambar Kecil (Thumbnails) untuk Tukar Gambar -->
+                <div id="modal-thumbnails" class="flex gap-2 overflow-x-auto p-2 max-w-full"></div>
+            </div>
+        </div>
+    </script>
+
+        <!-- Page 4: PC Build Gallery dengan Slideshow -->
+    <section id="page-ansuran" class="page-content hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8"></section>
+     <div class="max-w-7xl mx-auto px-4 py-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight">
+                
+                <!-- Grid Galeri Utama -->
+                <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+
+            <!-- Modal Pop-Up Viewer (Kekal untuk tontonan saiz penuh) -->
+            <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+                <button onclick="closeImageModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-3xl font-bold p-2 focus:outline-none z-10">
+                    &times;
+                </button>
+                <div class="max-w-4xl w-full flex flex-col items-center">
+                    <div class="relative max-h-[75vh] overflow-hidden rounded-2xl border border-purple-500/30 bg-gray-900 shadow-2xl mb-4">
+                        <img id="modal-active-img" src="" alt="View PC Build" class="max-h-[75vh] w-auto object-contain">
+                    </div>
+                    <h3 id="modal-title" class="text-xl font-bold text-white mb-2"></h3>
+                    <div id="modal-thumbnails" class="flex gap-2 overflow-x-auto p-2 max-w-full"></div>
+                </div>
+            </div>
+
+            <script>
+                const myBuildsGallery = [
+                    {
+                        id: 'build-1',
+                        title: 'Invasion+ Ares-G Silver PC Build',
+                        images: [
+                            'IMG_9768.jpg',
+                            'IMG_9769.jpg',
+                            'IMG_9770.jpg',
+                            'IMG_9771.jpg',
+                            'IMG_9772.jpg',
+                            'IMG_9773.jpg',
+                            'IMG_9774.jpg',
+                            'IMG_9775.jpg'
+                        ]
+                    },
+                    {
+                        id: 'build-2',
+                        title: 'Asus Republic Of Gamer ROG GR801 Cronox PC Build ',
+                        images: [
+                            'IMG_9740.jpg',
+                            'IMG_9741.jpg',
+                            'IMG_9739.jpg',
+                            'IMG_9737.jpg',
+                            'IMG_9738.jpg',
+                            'IMG_9736.jpg',
+                            'IMG_9735.jpg',
+                            'IMG_9734.jpg',
+                            'IMG_9731.jpg',
+                            'IMG_9743.jpg',
+                            'IMG_9730.jpg',
+                            'IMG_9728.jpg',
+                            'IMG_9727.jpg',
+                            'IMG_9729.jpg'
+                        ]
+                    },
+                    {
+                        id: 'build-3',
+                        title: 'Invasion+ ARES-G Grey PC Build',
+                        images: [
+                            'IMG_9749.jpg',
+                            'IMG_9750.jpg',
+                            'IMG_9751.jpg',
+                            'IMG_9752.jpg',
+                            'IMG_9753.jpg',
+                            'IMG_9755.jpg',
+                            'IMG_9756.jpg',
+                            'IMG_9757.jpg',
+                            'IMG_9758.jpg'
+                        ]
+                    }
+                ];
+
+                // Simpan indeks sl semasa untuk setiap kad binaan
+                let slideIndexes = {};
+
+                function renderPersonalGallery() {
+                    const grid = document.getElementById('gallery-grid');
+                    if (!grid) return;
+
+                    grid.innerHTML = '';
+
+                    myBuildsGallery.forEach(build => {
+                        // Tetapkan indeks sl bermula pada 0 jika belum ada
+                        if (slideIndexes[build.id] === undefined) {
+                            slideIndexes[build.id] = 0;
+                        }
+
+                        const currentIdx = slideIndexes[build.id];
+                        const currentImg = build.images[currentIdx] || 'https://via.placeholder.com/600x400?text=No+Image';
+                        const totalImages = build.images.length;
+
+                        const card = document.createElement('div');
+                        card.className = 'glass-panel rounded-2xl border border-gray-800 overflow-hidden hover:border-purple-500/50 transition-all duration-300 shadow-xl group';
+                        
+                        card.innerHTML = `
+                            <div class="h-64 overflow-hidden bg-gray-900 relative">
+                                <!-- Gambar Slideshow Utama -->
+                                <img id="img-${build.id}" src="${currentImg}" alt="${build.title}" 
+                                    class="w-full h-full object-cover transition-all duration-300 cursor-pointer"
+                                    onclick="openImageModal('${build.id}')"
+                                    onerror="this.src='https://via.placeholder.com/600x400?text=Gambar+Tidak+Jumpa'">
+                                
+                                <!-- Butang Slideshow Kiri (Prev) -->
+                                ${totalImages > 1 ? `
+                                    <button onclick="changeSlide('${build.id}', -1, event)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-purple-600 text-white w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-lg">
+                                        &#10094;
+                                    </button>
+                                    <button onclick="changeSlide('${build.id}', 1, event)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-purple-600 text-white w-9 h-9 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-lg">
+                                        &#10095;
+                                    </button>
+                                ` : ''}
+
+                                <!-- Badge Bilangan / Indeks Slideshow -->
+                                <span class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-purple-300 border border-purple-500/30 text-[11px] font-semibold px-2.5 py-1 rounded-lg pointer-events-none">
+                                    📷 <span id="counter-${build.id}">${currentIdx + 1}</span>/${totalImages}
+                                </span>
+                            </div>
+
+                            <div class="p-5 flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">${build.title}</h3>
+                                    <span class="text-xs text-gray-400">Exclusive Viewnet</span>
+                                </div>
+                                <button onclick="openImageModal('${build.id}')" class="bg-purple-600/20 text-purple-300 hover:bg-purple-600 hover:text-white p-2.5 rounded-xl border border-purple-500/30 transition-all text-xs font-medium">
+                                    🔍 Zoom
+                                </button>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+                }
+
+                // Fungsi Tukar Slide Terus pada Kad
+                function changeSlide(buildId, direction, event) {
+                    event.stopPropagation(); // Elak dari buka modal serentak
+                    const build = myBuildsGallery.find(b => b.id === buildId);
+                    if (!build) return;
+
+                    let idx = slideIndexes[buildId] + direction;
+                    
+                    // Pusing gelung (loop) kembali ke awal atau akhir
+                    if (idx >= build.images.length) {
+                        idx = 0;
+                    } else if (idx < 0) {
+                        idx = build.images.length - 1;
+                    }
+
+                    slideIndexes[buildId] = idx;
+
+                    // Kemas kini paparan imej dan nombor kaunter pada kad tersebut
+                    document.getElementById(`img-${buildId}`).src = build.images[idx];
+                    document.getElementById(`counter-${buildId}`).textContent = idx + 1;
+                }
+
+                // Logik Modal Viewer (Papar Besar)
+                function openImageModal(buildId) {
+                    const build = myBuildsGallery.find(b => b.id === buildId);
+                    if (!build || !build.images.length) return;
+
+                    const currentIdx = slideIndexes[buildId] || 0;
+                    document.getElementById('modal-title').textContent = build.title;
+                    setActiveModalImage(build.images[currentIdx]);
+
+                    const thumbContainer = document.getElementById('modal-thumbnails');
+                    thumbContainer.innerHTML = '';
+
+                    build.images.forEach((imgUrl, index) => {
+                        const thumb = document.createElement('img');
+                        thumb.src = imgUrl;
+                        thumb.className = `w-16 h-16 object-cover rounded-lg border-2 cursor-pointer transition-all ${index === currentIdx ? 'border-purple-500' : 'border-transparent hover:border-purple-300'}`;
+                        
+                        thumb.onclick = (e) => {
+                            e.stopPropagation();
+                            setActiveModalImage(imgUrl);
+                            Array.from(thumbContainer.children).forEach(c => c.classList.remove('border-purple-500'));
+                            thumb.classList.add('border-purple-500');
+                        };
+                        thumbContainer.appendChild(thumb);
+                    });
+
+                    document.getElementById('image-modal').classList.remove('hidden');
+                }
+
+                function setActiveModalImage(url) {
+                    document.getElementById('modal-active-img').src = url;
+                }
+
+                function closeImageModal() {
+                    document.getElementById('image-modal').classList.add('hidden');
+                }
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') closeImageModal();
+                });
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    renderPersonalGallery();
+                });
+            </script>                
+        <!-- ================= PAGE 5: SEMAK KELAYAKAN ANSURAN ================= -->
+        <section id="page-ansuran" class="page-content hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+            <div class="text-center space-y-3">
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-brandGold/10 text-brandGold flex items-center justify-center text-3xl border border-brandGold/30">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <h1 class="font-gaming text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brandGold via-white to-brandCyan">
+                    SEMAK KELAYAKAN ANSURAN
+                </h1>
+                <p class="text-gray-400 text-sm">
+                    Isi borang di bawah dan muat naik dokumen ringkas. Pasukan kami akan hubungi anda dalam masa 24 jam!
+                </p>
+            </div>
+
+            <!-- Form Card -->
+            <form id="ansuranForm" onsubmit="handleAnsuranSubmit(event)" class="glass-panel p-6 sm:p-8 rounded-3xl border border-gray-800 space-y-6">
+                
+                <!-- Personal Info -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-brandGold uppercase tracking-wider border-b border-gray-800 pb-2">
+                        1. Maklumat Peribadi
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">Nama Penuh (Ikut IC) *</label>
+                            <input type="text" required placeholder="Ahmad Bin Abdullah" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brandGold">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">Nombor Telefon (WhatsApp) *</label>
+                            <input type="tel" id="ansuran-phone" required placeholder="0167866447" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brandGold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">Pekerjaan *</label>
+                            <input type="text" required placeholder="Sektor Swasta / Kerajaan / Self-Employed" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brandGold">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">Anggaran Gaji Bulanan (RM) *</label>
+                            <input type="number" required placeholder="2500" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brandGold">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Upload Section -->
+                <div class="space-y-4 pt-4 border-t border-gray-800">
+                    <h3 class="text-sm font-bold text-brandGold uppercase tracking-wider border-b border-gray-800 pb-2">
+                        2. Muat Naik Dokumen SoKongan
+                    </h3>
+
+                    <!-- Upload IC -->
+                    <div>
+                        <label class="block text-xs text-gray-300 mb-2">Gambar Kad Pengenalan (IC Depan & Belakang) *</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Depan -->
+                            <div class="border-2 border-dashed border-gray-700 rounded-2xl p-4 text-center relative hover:border-brandGold transition-colors">
+                                <input type="file" required accept="image/*" onchange="previewImage(this, 'preview-ic-depan')" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <div id="preview-ic-depan" class="space-y-1">
+                                    <i class="fa-solid fa-cloud-arrow-up text-2xl text-brandGold"></i>
+                                    <p class="text-xs font-bold text-white">IC Muka Depan</p>
+                                    <p class="text-[10px] text-gray-400">Klik untuk muat naik</p>
+                                </div>
+                            </div>
+                            <!-- Belakang -->
+                            <div class="border-2 border-dashed border-gray-700 rounded-2xl p-4 text-center relative hover:border-brandGold transition-colors">
+                                <input type="file" required accept="image/*" onchange="previewImage(this, 'preview-ic-belakang')" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <div id="preview-ic-belakang" class="space-y-1">
+                                    <i class="fa-solid fa-cloud-arrow-up text-2xl text-brandGold"></i>
+                                    <p class="text-xs font-bold text-white">IC Muka Belakang</p>
+                                    <p class="text-[10px] text-gray-400">Klik untuk muat naik</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload Payslip -->
+                    <div>
+                        <label class="block text-xs text-gray-300 mb-2">Slip Gaji Terkini (1 Bulan) *</label>
+                        <div class="border-2 border-dashed border-gray-700 rounded-2xl p-6 text-center relative hover:border-brandGold transition-colors">
+                            <input type="file" required accept="image/*,application/pdf" onchange="previewPayslip(this, 'preview-payslip')" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                            <div id="preview-payslip" class="space-y-1">
+                                <i class="fa-solid fa-file-invoice text-3xl text-brandGold"></i>
+                                <p class="text-xs font-bold text-white">Muat Naik Slip Gaji (PDF / Image)</p>
+                                <p class="text-[10px] text-gray-400">Fail terkini 1 bulan sahaja</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brandGold via-amber-500 to-brandGreen text-black font-extrabold text-sm hover:opacity-90 transition-all shadow-lg glow-gold">
+                    <i class="fa-solid fa-paper-plane me-2"></i> Hantar Permohonan Sekarang
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Success Confirmation Modal -->
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+        <div class="glass-panel max-w-md w-full p-6 sm:p-8 rounded-3xl border border-brandGreen text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-brandGreen/20 text-brandGreen flex items-center justify-center mx-auto text-3xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-gaming text-2xl font-bold text-white">PERMOHONAN DIHANTAR!</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">
+                Terima kasih. Dokumen & permohonan ansuran anda telah berjaya direkodkan. Tekan butang di bawah untuk maklumkan kepada admin WhatsApp kami.
+            </p>
+            <div class="pt-2 space-y-2">
+                <button onclick="redirectAnsuranWhatsapp()" class="w-full py-3 rounded-xl bg-brandGreen text-black font-extrabold text-xs flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Hantar Pengesahan ke WhatsApp
+                </button>
+                <button onclick="closeModal()" class="w-full py-2.5 rounded-xl bg-gray-800 text-gray-400 text-xs font-bold">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 border-t border-gray-800 py-10 mt-16 text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-3">
+                <div class="font-gaming text-lg font-bold text-white">VIEWNET COMPUTER SYSTEM SDN BHD </div>
+                <p class="leading-relaxed">Menjual Custom PC Gaming secara Cash dan Ansuran, PC Part, dan Servis Komputer.</p>
+            </div>
+            <div class="space-y-2">
+                <h4 class="font-bold text-white text-sm">Waktu Operasi</h4>
+                <p>Isnin - Ahad: 10.00 AM - 10.00 PM</p>
+            </div>
+            <div class="space-y-2">
+                <h4 class="font-bold text-white text-sm">Hubungi Kami</h4>
+                <p><i class="fa-solid fa-location-dot me-2 text-brandCyan"></i> Lot 3-012, Level 3, Plaza Low Yat, Off, Jalan Bukit Bintang, Bukit Bintang, Kuala Lumpur</p>
+                <p><i class="fa-solid fa-phone me-2 text-brandCyan"></i> +60 167866447</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 mt-8 border-t border-gray-900 text-[11px] text-gray-500">
+            © 2026 Lagenda Komputer. Hak Cipta Terelihara.
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Inventory Database (Mock database sync from inventory sheet)
+        const inventoryDB = {
+            cpus: [
+            { id: 'cp1', name: 'CPU AMD AM4 RYZEN 3 3200G 3.6GHZ/4.0GHZ 6MB 4C/4T #YD3200C5M4MFH#', price: 219, socket: 'AM4', ramType: 'DDR4', tdp: 65 },
+            { id: 'cp2', name: 'CPU AMD AM4 RYZEN 5 5500 3.6GHZ/4.2GHZ 19MB 6C/12T #100-100000457BOX#', price: 369, socket: 'AM4', ramType: 'DDR4', tdp: 65 },
+            { id: 'cp3', name: 'CPU AMD AM4 RYZEN 5 5500GT 3.6GHZ/4.4GHZ 16MB 6C/12T #100-100001489BOX#', price: 534, socket: 'AM4', ramType: 'DDR4', tdp: 65 },
+            { id: 'cp4', name: 'CPU AMD AM4 RYZEN 5 5600 3.5GHZ/4.4GHZ 35MB 6C/12T #100-100000927BOX#', price: 519, socket: 'AM4', ramType: 'DDR4', tdp: 65 },
+            { id: 'cp5', name: 'CPU AMD AM4 RYZEN 5 5600GT 3.6GHZ/4.6GHZ 16MB 6C/12T #100-100001488BOX#', price: 609, socket: 'AM4', ramType: 'DDR4', tdp: 65 },
+            { id: 'cp6', name: 'CPU AMD AM4 RYZEN 7 5700G 3.8GHZ/4.6GHZ 20MB 8C/16T #100-100000263BOX#', price: 859, socket: 'AM4', ramType: 'DDR4', tdp: 65 },
+            { id: 'cp7', name: 'CPU AMD AM4 RYZEN 7 5700X 3.4GHZ/4.6GHZ 36MB 8C/16T #100-100000926#', price: 729, socket: 'AM4', ramType: 'DDR4', tdp: 65 },
+            { id: 'cp8', name: 'CPU AMD AM5 RYZEN 5 7500F 3.7GHZ/5.0GHZ 32MB 6C/12T #100-100000597/#', price: 549, socket: 'AM5', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp9', name: 'CPU AMD AM5 RYZEN 5 7600X 4.7GHZ/5.3GHZ 38MB 6C/12T #100-100000593WOF#', price: 924, socket: 'AM5', ramType: 'DDR5', tdp: 105 },
+            { id: 'cp10', name: 'CPU AMD AM5 RYZEN 5 9600X 3.9GHZ/5.4GHZ 32MB 6C/12T #100-100001405#', price: 1039, socket: 'AM5', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp11', name: 'CPU AMD AM5 RYZEN 7 7800X3D 4.2GHZ/5.0GHZ 100MB 8C/16T #100-100000910MPK#', price: 1289, socket: 'AM5', ramType: 'DDR5', tdp: 120 },
+            { id: 'cp12', name: 'CPU AMD AM5 RYZEN 7 9700X 3.8GHZ/5.5GHZ 32MB 8C/16T #100-100001404#', price: 1429, socket: 'AM5', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp13', name: 'CPU AMD AM5 RYZEN 7 9800X3D 4.7GHZ/5.2GHZ 96MB 8C/16T #100-100001084WOF#', price: 1999, socket: 'AM5', ramType: 'DDR5', tdp: 120 },
+            { id: 'cp14', name: 'CPU AMD AM5 RYZEN 7 9850X3D 4.7GHZ/5.6GHZ 96MB 8C/16T #100-000001973#', price: 2059, socket: 'AM5', ramType: 'DDR5', tdp: 120 },
+            { id: 'cp15', name: 'CPU AMD AM5 RYZEN 9 9950X 4.3GHZ/5.7GHZ 64MB 16C/32T', price: 2549, socket: 'AM5', ramType: 'DDR5', tdp: 170 },
+            { id: 'cp16', name: 'CPU AMD AM5 RYZEN 9 9950X3D 4.3GHZ/5.7GHZ 128MB 16C/32T #100-100000719#', price: 2839, socket: 'AM5', ramType: 'DDR5', tdp: 170 },
+            { id: 'cp17', name: 'CPU AMD AM5 RYZEN 9 9950X3D2 4.3GHZ/5.6GHZ 192MB 16C/32T', price: 3879, socket: 'AM5', ramType: 'DDR5', tdp: 170 },
+            { id: 'cp18', name: 'CPU INTEL S1700 CORE I3 14100 3.5GHZ/4.7GHZ 12MB 4C/8T', price: 499, socket: 'LGA1700', ramType: 'DDR4', tdp: 60 },
+            { id: 'cp19', name: 'CPU INTEL S1700 CORE I5 14400 2.5GHZ/4.7GHZ 20MB 6C/16T', price: 709, socket: 'LGA1700', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp20', name: 'CPU INTEL S1700 CORE I5 14400F 2.5GHZ/4.7GHZ 20MB 6C/16T', price: 599, socket: 'LGA1700', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp21', name: 'CPU INTEL S1700 CORE I7 12700KF 3.6GHZ/5.0GHZ 25MB 12C/20T', price: 899, socket: 'LGA1700', ramType: 'DDR4', tdp: 125 },
+            { id: 'cp22', name: 'CPU INTEL S1700 CORE I7 14700KF 2.5GHZ/5.6GHZ 28MB 20C/28T (NO GRAPHIC)', price: 1299, socket: 'LGA1700', ramType: 'DDR5', tdp: 125 },
+            { id: 'cp23', name: 'CPU INTEL S1851 CORE ULTRA 5 225 3.3GHZ/4.9GHZ 22MB 10C/10T', price: 599, socket: 'LGA1851', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp24', name: 'CPU INTEL S1851 CORE ULTRA 5 225F 3.3GHZ/4.9GHZ 22MB 10C/10T', price: 499, socket: 'LGA1851', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp25', name: 'CPU INTEL S1851 CORE ULTRA 5 250K 4.2GHZ/5.3GHZ 30MB 18C/18T', price: 999, socket: 'LGA1851', ramType: 'DDR5', tdp: 125 },
+            { id: 'cp26', name: 'CPU INTEL S1851 CORE ULTRA 5 250KF 4.2GHZ/5.3GHZ 30MB 18C/18T', price: 949, socket: 'LGA1851', ramType: 'DDR5', tdp: 125 },
+            { id: 'cp27', name: 'CPU INTEL S1851 CORE ULTRA 7 265KF 3.9GHZ/5.5GHZ 36MB 20C/20T', price: 1188, socket: 'LGA1851', ramType: 'DDR5', tdp: 125 },
+            { id: 'cp28', name: 'CPU INTEL S1851 CORE ULTRA 7 270K PLUS 3.7GHZ/5.5GHZ 36MB 24C/24T', price: 1429, socket: 'LGA1851', ramType: 'DDR5', tdp: 125 },
+            { id: 'cp29', name: 'CPU INTEL S1851 CORE ULTRA 9 285 2.5GHZ/5.6GHZ 40MB 24C/24T', price: 2299, socket: 'LGA1851', ramType: 'DDR5', tdp: 65 },
+            { id: 'cp30', name: 'CPU INTEL S1851 CORE ULTRA 9 285K 3.7GHZ/5.7GHZ 40MB 24C/24T', price: 2749, socket: 'LGA1851', ramType: 'DDR5', tdp: 125 }
+        ],
+            mobos: [
+            { id: 'mb1', name: 'MB ASROCK AMD AM5 A620AM-HVS', price: 399, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb2', name: 'MB ASROCK INTEL S1700 H610 H610M-HDV/M.2 R2.0', price: 349, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb3', name: 'MB ASUS AMD AM4 A520 PRIME A520M-K CSM', price: 259, socket: 'AM4', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb4', name: 'MB ASUS AMD AM4 B550 PRIME B550M-A WIFI II', price: 499, socket: 'AM4', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb5', name: 'MB ASUS AMD AM4 B550 PRIME B550M-K ARGB', price: 399, socket: 'AM4', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb6', name: 'MB ASUS AMD AM4 B550 ROG STRIX B550-A GAMING', price: 799, socket: 'AM4', ramType: 'DDR4', formFactor: 'ATX' },
+            { id: 'mb7', name: 'MB ASUS AMD AM4 B550 ROG STRIX B550-F GAMING WIFI II', price: 899, socket: 'AM4', ramType: 'DDR4', formFactor: 'ATX' },
+            { id: 'mb8', name: 'MB ASUS AMD AM5 A620 PRIME A620M-K CSM', price: 399, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb9', name: 'MB ASUS AMD AM5 B650 B650M-AYW WIFI', price: 599, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb10', name: 'MB ASUS AMD AM5 B650 ROG STRIX B650-A GAMING WIFI', price: 999, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb11', name: 'MB ASUS AMD AM5 B650 TUF B650EM-PLUS WIFI', price: 799, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb12', name: 'MB ASUS AMD AM5 B840 PRIME B840M-A WIFI CSM', price: 699, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb13', name: 'MB ASUS AMD AM5 B850 B850M-AYW WIFI', price: 699, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb14', name: 'MB ASUS AMD AM5 B850 ROG STRIX B850-A GAMING WIFI NEO', price: 1399, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb15', name: 'MB ASUS AMD AM5 B850 ROG STRIX B850-F GAMING WIFI NEO', price: 1399, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb16', name: 'MB ASUS AMD AM5 B850 TUF GAMING B850-PLUS WIFI', price: 1199, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb17', name: 'MB ASUS AMD AM5 B850 TUF GAMING B850M-PLUS WIFI7 W', price: 1099, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb18', name: 'MB ASUS AMD AM5 X870 ROG CROSSHAIR X870E EDITION 20', price: 15500, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb19', name: 'MB ASUS AMD AM5 X870 ROG STRIX X870-A GAMING WIFI', price: 1999, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb20', name: 'MB ASUS AMD AM5 X870 ROG STRIX X870E-A GAMING WIFI NEO', price: 2199, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb21', name: 'MB ASUS AMD AM5 X870 ROG STRIX X870E-E GAMING WIFI NEO', price: 2699, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb22', name: 'MB ASUS AMD AM5 X870 ROG STRIX X870E-H GAMING WIFI HATSUNE MIKU EDITION', price: 2150, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb23', name: 'MB ASUS INTEL S1700 B760 B760M-AYW PRO WIFI D5', price: 649, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb24', name: 'MB ASUS INTEL S1700 B760 B760M-AYW WIFI II D4', price: 649, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb25', name: 'MB ASUS INTEL S1700 B760 PRIME B760M-A WIFI DDR4', price: 699, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb26', name: 'MB ASUS INTEL S1700 B760 PRIME B760M-F WIFI DDR5', price: 599, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb27', name: 'MB ASUS INTEL S1700 B760 PRIME B760M-K DDR5', price: 499, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb28', name: 'MB ASUS INTEL S1700 H610 PRIME H610M-A WIFI D4', price: 499, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb29', name: 'MB ASUS INTEL S1700 H610 PRIME H610M-A WIFI DDR5', price: 449, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb30', name: 'MB ASUS INTEL S1700 H610 PRIME H610M-F WIFI D4', price: 399, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb31', name: 'MB ASUS INTEL S1700 H610 PRIME H610M-K D4-CSM', price: 369, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb32', name: 'MB ASUS INTEL S1700 H610 PRIME H610M-K DDR5', price: 299, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb33', name: 'MB ASUS INTEL S1700 Z790 TUF GAMING Z790-BTF WIFI', price: 1299, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb34', name: 'MB ASUS INTEL S1851 B860 PRIME B860M-A WIFI CSM', price: 799, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb35', name: 'MB ASUS INTEL S1851 B860 ROG STRIX B860-A GAMING WIFI', price: 1199, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb36', name: 'MB ASUS INTEL S1851 B860 ROG STRIX B860-F GAMING WIFI', price: 1399, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb37', name: 'MB ASUS INTEL S1851 H810 PRIME H810M-A WIFI', price: 499, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb38', name: 'MB ASUS INTEL S1851 Z890 ROG MAXIMUS Z890 HERO', price: 3499, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb39', name: 'MB ASUS INTEL S1851 Z890 ROG STRIX Z890-A GAMING WIFI', price: 1999, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb40', name: 'MB ASUS INTEL S1851 Z890 ROG STRIX Z890-E GAMING WIFI', price: 2999, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb41', name: 'MB ASUS INTEL S1851 Z890 ROG STRIX Z890-F GAMING WIFI', price: 2099, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb43', name: 'MB ASUS INTEL S1851 Z890 TUF GAMING Z890-PRO WIFI', price: 1699, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb46', name: 'MB GIGABYTE AMD AM5 A620M H', price: 399, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb47', name: 'MB GIGABYTE AMD AM5 B850 AORUS STEALTH ICE', price: 1399, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb48', name: 'MB GIGABYTE AMD AM5 X870 AORUS ELITE X3D ICE', price: 1599, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb49', name: 'MB GIGABYTE INTEL S1700 B760 B760M DS3H WF6E GEN5 DDR5', price: 599, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb50', name: 'MB GIGABYTE INTEL S1700 B760 B760M-E DDR5', price: 399, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb51', name: 'MB GIGABYTE INTEL S1700 H610 H610M H V2 DDR5', price: 269, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb52', name: 'MB GIGABYTE INTEL S1700 H610 H610M K DDR4', price: 299, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb53', name: 'MB GIGABYTE INTEL S1700 H610 H610M K V2 DDR5', price: 269, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb54', name: 'MB GIGABYTE INTEL S1851 B860M EAGLE WIFI6', price: 699, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb55', name: 'MB GIGABYTE INTEL S1851 B860M GAMING X WIFI6E', price: 799, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb56', name: 'MB MSI AMD AM4 A520 A520M-S PRO (911-7C96-071)', price: 259, socket: 'AM4', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb57', name: 'MB MSI AMD AM4 B550 B550M-A PRO (911-7C96-040)', price: 359, socket: 'AM4', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb58', name: 'MB MSI AMD AM4 B550M PRO B550M-P WIFI6E', price: 499, socket: 'AM4', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb59', name: 'MB MSI AMD AM5 A620 PRO A620M-E', price: 399, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb60', name: 'MB MSI AMD AM5 B650 B650M GAMING PLUS WIFI (911-7E26-001)', price: 699, socket: 'AM5', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb61', name: 'MB MSI AMD AM5 MAG X870E GAMING PLUS MAX WIFI (911-7E70-016)', price: 1499, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb62', name: 'MB MSI AMD AM5 X870E-S EVO WIFI (911-7E86-003)', price: 1199, socket: 'AM5', ramType: 'DDR5', formFactor: 'ATX' },
+            { id: 'mb63', name: 'MB MSI INTEL S1700 B760 PRO B760M-A WIFI DDR5 (911-7D99-007)', price: 599, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb64', name: 'MB MSI INTEL S1700 B760 PRO B760M-A WIFI DDR5 (911-7D99-012)', price: 599, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb65', name: 'MB MSI INTEL S1700 B760 PRO B760M-E DDR5 (911-7D48-065)', price: 399, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb66', name: 'MB MSI INTEL S1700 B760M BOMBER WIFI DDR5 (911-7D90-061)', price: 499, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb67', name: 'MB MSI INTEL S1700 H610 PRO H610M-E DDR4 (911-7D48-062)', price: 349, socket: 'LGA1700', ramType: 'DDR4', formFactor: 'mATX' },
+            { id: 'mb68', name: 'MB MSI INTEL S1700 H610 PRO H610M-E DDR5 (911-7D48-072)', price: 269, socket: 'LGA1700', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb69', name: 'MB MSI INTEL S1851 B860 PRO B860M-B WIFI', price: 649, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb70', name: 'MB MSI INTEL S1851 B860 PRO B860M-C EX', price: 449, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb71', name: 'MB MSI INTEL S1851 B860 PRO B860M-P WIFI6E', price: 749, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb72', name: 'MB MSI INTEL S1851 B860M GAMING WIFI', price: 699, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb73', name: 'MB MSI INTEL S1851 H810 PRO H810M GAMING WIFI6E', price: 499, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' },
+            { id: 'mb74', name: 'MB MSI INTEL S1851 H810 PRO H810M-B WIFI6E', price: 499, socket: 'LGA1851', ramType: 'DDR5', formFactor: 'mATX' }
+        ],
+            rams: [
+            { id: 'r1', name: 'RAM ADATA DESKTOP DDR4 PC3200 16GB (AD4U320016G22-SGN)', price: 559, type: 'DDR4' },
+            { id: 'r2', name: 'RAM ADATA DESKTOP DDR4 PC3200 32GB (AD4U320032G22-SGN)', price: 1309, type: 'DDR4' },
+            { id: 'r3', name: 'RAM ADATA DESKTOP DDR4 PC3200 8GB (AD4U32008G22-SGN)', price: 279, type: 'DDR4' },
+            { id: 'r4', name: 'RAM ADATA DESKTOP DDR5 PC5600 16GB (AD5U560016G-S)', price: 939, type: 'DDR5' },
+            { id: 'r5', name: 'RAM ADATA DESKTOP DDR5 PC5600 32GB (AD5U560032G-S)', price: 1919, type: 'DDR5' },
+            { id: 'r6', name: 'RAM ADATA DESKTOP DDR5 PC5600 8GB (AD5U56008G-S)', price: 529, type: 'DDR5' },
+            { id: 'r7', name: 'RAM APACER DESKTOP DDR5 PC5600 16GB (AU16GHB56CVBBGH)', price: 939, type: 'DDR5' },
+            { id: 'r8', name: 'RAM ADATA DESKTOP DDR4 XPG SPECTRIX D35G PC3200 16GB RGB (BLK)', price: 599, type: 'DDR4' },
+            { id: 'r9', name: 'RAM ADATA DESKTOP DDR4 XPG SPECTRIX D35G PC3200 16GB RGB (WHT)', price: 599, type: 'DDR4' },
+            { id: 'r10', name: 'RAM ADATA DESKTOP DDR4 XPG SPECTRIX D35G PC3200 8GB RGB (BLK)', price: 309, type: 'DDR4' },
+            { id: 'r11', name: 'RAM ADATA DESKTOP DDR4 XPG SPECTRIX D35G PC3200 8GB RGB (WHT)', price: 309, type: 'DDR4' },
+            { id: 'r12', name: 'RAM ADATA DESKTOP DDR5 XPG LANCER BLADE PC6000 16GB CL36 RGB (BLK)', price: 1199, type: 'DDR5' },
+            { id: 'r13', name: 'RAM CORSAIR DESKTOP DDR4 VENGEANCE RGB RS PC3200 16GB (8GB*2)', price: 569, type: 'DDR4' },
+            { id: 'r14', name: 'RAM CORSAIR DESKTOP DDR4 VENGEANCE RGB RS PC3200 8GB', price: 319, type: 'DDR4' },
+            { id: 'r15', name: 'RAM CORSAIR DESKTOP DDR4 VENGEANCE RGB PRO SL PC3200 16GB (8GB*2)', price: 509, type: 'DDR4' },
+            { id: 'r16', name: 'RAM CORSAIR DESKTOP DDR4 VENGEANCE RGB RS PC3200 16GB WHT', price: 499, type: 'DDR4' },
+            { id: 'r17', name: 'RAM CORSAIR DESKTOP DDR5 VENGEANCE RGB PC5600 16GB BLK', price: 1279, type: 'DDR5' },
+            { id: 'r18', name: 'RAM CORSAIR DESKTOP DDR5 VENGEANCE RGB PC6000 16GB BLK', price: 1269, type: 'DDR5' },
+            { id: 'r19', name: 'RAM CORSAIR DESKTOP DDR4 VENGEANCE RGB PRO SL 32GB PC3200 (16GB*2)', price: 1089, type: 'DDR4' },
+            { id: 'r20', name: 'RAM CORSAIR DESKTOP DDR5 VENGEANCE RGB PC5600 32GB RGB (16GB*2) BLK', price: 2019, type: 'DDR5' },
+            { id: 'r21', name: 'RAM CORSAIR DESKTOP DDR5 VENGEANCE RGB PC6000 64GB RGB (32GB*2) BLK', price: 4549, type: 'DDR5' },
+            { id: 'r22', name: 'RAM CORSAIR DESKTOP DDR4 VENGEANCE LPX PC3200 16GB', price: 629, type: 'DDR4' },
+            { id: 'r23', name: 'RAM CORSAIR DESKTOP DDR5 VENGEANCE PC5600 16GB BLK', price: 989, type: 'DDR5' },
+            { id: 'r24', name: 'RAM CORSAIR DESKTOP DDR5 VENGEANCE PC6000 16GB CL36 BLK', price: 999, type: 'DDR5' },
+            { id: 'r25', name: 'RAM CORSAIR DESKTOP DDR5 VENGEANCE PC6000 64GB (32GB*2) BLK', price: 4499, type: 'DDR5' },
+            { id: 'r26', name: 'RAM CORSAIR DESKTOP DDR4 VENGEANCE LPX PC3200 8GB BLK', price: 319, type: 'DDR4' },
+            { id: 'r27', name: 'RAM DATO DESKTOP DDR5 PC5600 16GB', price: 939, type: 'DDR5' },
+            { id: 'r28', name: 'RAM ESSENCORE DESKTOP DDR5 PC5600 16GB (ED5AGU880-56G4602)', price: 889, type: 'DDR5' },
+            { id: 'r29', name: 'RAM G.SKILL DESKTOP DDR5 AEGIS 5 PC5600 16GB BLK #EXPO & XMP#', price: 919, type: 'DDR5' },
+            { id: 'r30', name: 'RAM G.SKILL DESKTOP DDR5 AEGIS 5 PC5600 32GB (16GB*2) BLK #EXPO & XMP#', price: 1879, type: 'DDR5' },
+            { id: 'r31', name: 'RAM G.SKILL DESKTOP DDR5 RIPJAWS M5 NEO PC6000 32GB CL28 RGB (16GB*2) WHT #AMD EXPO#', price: 2719, type: 'DDR5' },
+            { id: 'r32', name: 'RAM G.SKILL DESKTOP DDR5 AEGIS 5 PC6000 32GB (16GB*2) BLK #EXPO & XMP#', price: 2349, type: 'DDR5' },
+            { id: 'r33', name: 'RAM G.SKILL DESKTOP DDR5 RIPJAWS M5 NEO PC6000 32GB CL36 RGB (16GB*2) BLK #AMD EXPO#', price: 2089, type: 'DDR5' },
+            { id: 'r34', name: 'RAM G.SKILL DESKTOP DDR5 TRIDENT Z5 32GB PC6000 RGB (16GB*2) BLK AMD EXPO', price: 2499, type: 'DDR5' },
+            { id: 'r35', name: 'RAM G.SKILL DESKTOP DDR5 TRIDENT Z5 32GB PC6000 RGB (16GB*2) BLK', price: 2499, type: 'DDR5' },
+            { id: 'r36', name: 'RAM G.SKILL DESKTOP DDR5 AEGIS 5 PC6000 32GB BLK #EXPO & XMP#', price: 2309, type: 'DDR5' },
+            { id: 'r37', name: 'RAM G.SKILL DESKTOP DDR5 RIPJAWS M5 NEO PC6000 64GB CL36 RGB (32GB*2) BLK #AMD EXPO#', price: 5099, type: 'DDR5' },
+            { id: 'r38', name: 'RAM G.SKILL DESKTOP DDR5 RIPJAWS M5 NEO PC6000 64GB CL36 RGB (32GB*2) WHT #AMD EXPO#', price: 5099, type: 'DDR5' },
+            { id: 'r39', name: 'RAM G.SKILL DESKTOP DDR5 TRIDENT Z5 PC6000 64GB RGB (32GB*2) WHT', price: 4999, type: 'DDR5' },
+            { id: 'r40', name: 'RAM G.SKILL DESKTOP DDR5 TRIDENT Z5 NEO PC6000 24GB (24GB*1) BLK', price: 1899, type: 'DDR5' },
+            { id: 'r41', name: 'RAM FANXIANG DESKTOP DDR4 UD01 PC3200 16GB HEATSINK (8GB*2)', price: 559, type: 'DDR4' },
+            { id: 'r42', name: 'RAM FANXIANG DESKTOP DDR4 UD01 PC3200 16GB HEATSINK', price: 559, type: 'DDR4' },
+            { id: 'r43', name: 'RAM FANXIANG DESKTOP DDR4 UD02R PC3200 16GB WITH HS', price: 559, type: 'DDR4' },
+            { id: 'r44', name: 'RAM FANXIANG DESKTOP DDR4 UD02R PC3200 8GB WITH HS', price: 269, type: 'DDR4' },
+            { id: 'r45', name: 'RAM FANXIANG DESKTOP DDR4 UD02R PC3200 8GB WITH HEATSINK (FOR INTEL ONLY)', price: 269, type: 'DDR4' },
+            { id: 'r46', name: 'RAM FANXIANG DESKTOP DDR4 UD11 PC3200 16GB RGB', price: 569, type: 'DDR4' },
+            { id: 'r47', name: 'RAM FANXIANG DESKTOP DDR4 UD11 PC3200 8GB RGB', price: 279, type: 'DDR4' },
+            { id: 'r48', name: 'RAM HUADISK DESKTOP DDR4 PC3200 16GB WITH HEATSINK', price: 469, type: 'DDR4' },
+            { id: 'r49', name: 'RAM HUADISK DESKTOP DDR4 PC3200 8GB WITH HEATSINK', price: 269, type: 'DDR4' },
+            { id: 'r50', name: 'RAM KINGBANK DESKTOP DDR5 KRRB PC6400 32GB RGB (16GB*2) BLK', price: 1989, type: 'DDR5' },
+            { id: 'r51', name: 'RAM KINGSTON DESKTOP DDR4 FURY BEAST PC3200 16GB', price: 769, type: 'DDR4' },
+            { id: 'r52', name: 'RAM KINGSTON DESKTOP DDR4 FURY BEAST PC3200 8GB', price: 399, type: 'DDR4' },
+            { id: 'r53', name: 'RAM KINGSTON DESKTOP DDR4 FURY BEAST PC3200 16GB (WHT)', price: 769, type: 'DDR4' },
+            { id: 'r54', name: 'RAM KINGSTON DESKTOP DDR4 FURY BEAST PC3200 16GB RGB', price: 799, type: 'DDR4' },
+            { id: 'r55', name: 'RAM KINGSTON DESKTOP DDR4 FURY BEAST PC3200 32GB RGB', price: 1119, type: 'DDR4' },
+            { id: 'r56', name: 'RAM KINGSTON DESKTOP DDR4 FURY BEAST PC3200 8GB RGB', price: 429, type: 'DDR4' },
+            { id: 'r57', name: 'RAM KINGSTON DESKTOP DDR4 FURY BEAST PC3200 8GB RGB (WHT)', price: 429, type: 'DDR4' },
+            { id: 'r58', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5200 8GB RGB', price: 589, type: 'DDR5' },
+            { id: 'r59', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5600 32GB #AMD EXPO#', price: 2229, type: 'DDR5' },
+            { id: 'r60', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5600 16GB RGB #AMD EXPO#', price: 1299, type: 'DDR5' },
+            { id: 'r61', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5600 32GB RGB #AMD EXPO#', price: 2259, type: 'DDR5' },
+            { id: 'r62', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5600 8GB RGB #EXPO#', price: 649, type: 'DDR5' },
+            { id: 'r63', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5600 128GB (64GB*2)', price: 8999, type: 'DDR5' },
+            { id: 'r64', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5600 16GB', price: 1179, type: 'DDR5' },
+            { id: 'r65', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC5600 32GB RGB', price: 2259, type: 'DDR5' },
+            { id: 'r66', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC6000 16GB CL30', price: 1379, type: 'DDR5' },
+            { id: 'r67', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC6000 32GB CL30', price: 2689, type: 'DDR5' },
+            { id: 'r68', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC6000 16GB CL30 RGB', price: 1399, type: 'DDR5' },
+            { id: 'r69', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC6000 16GB', price: 1299, type: 'DDR5' },
+            { id: 'r70', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC6000 16GB RGB #AMD EXPO#', price: 1329, type: 'DDR5' },
+            { id: 'r71', name: 'RAM KINGSTON DESKTOP DDR5 FURY BEAST PC6000 32GB #AMD EXPO#', price: 2369, type: 'DDR5' },
+            { id: 'r72', name: 'RAM KINGSTON DESKTOP DDR3 PC1600 2GB', price: 59, type: 'DDR3' },
+            { id: 'r73', name: 'RAM KINGSTON DESKTOP DDR4 PC3200 16GB', price: 729, type: 'DDR4' },
+            { id: 'r74', name: 'RAM KINGSTON DESKTOP DDR4 PC3200 16GB 16Gbit', price: 729, type: 'DDR4' },
+            { id: 'r75', name: 'RAM KINGSTON DESKTOP DDR4 PC3200 8GB 8Gbit', price: 409, type: 'DDR4' },
+            { id: 'r76', name: 'RAM KINGSTON DESKTOP DDR4 PC3200 8GB 8Gbit (WHT)', price: 409, type: 'DDR4' },
+            { id: 'r77', name: 'RAM KINGSTON DESKTOP DDR5 PC4800 8GB', price: 109, type: 'DDR5' },
+            { id: 'r78', name: 'RAM KINGSTON DESKTOP DDR5 PC5600 32GB', price: 2449, type: 'DDR5' },
+            { id: 'r79', name: 'RAM KINGSTON DESKTOP DDR5 PC5600 8GB', price: 699, type: 'DDR5' },
+            { id: 'r80', name: 'RAM KINGSTON DESKTOP DDR5 PC5600 16GB', price: 1199, type: 'DDR5' },
+            { id: 'r81', name: 'RAM LEXAR DESKTOP DDR4 PC3200 8GB', price: 279, type: 'DDR4' },
+            { id: 'r82', name: 'RAM LEXAR DESKTOP DDR4 PC3200 16GB', price: 469, type: 'DDR4' },
+            { id: 'r83', name: 'RAM LEXAR DESKTOP DDR4 PC3200 32GB', price: 1239, type: 'DDR4' },
+            { id: 'r84', name: 'RAM LEXAR DESKTOP DDR5 PC5600 8GB', price: 489, type: 'DDR5' },
+            { id: 'r85', name: 'RAM LEXAR DESKTOP DDR5 PC5600 16GB', price: 939, type: 'DDR5' }
+        ],
+            ssds: [
+            { id: 's1', name: 'SSD INT ADATA M.2 PCIE NVME GEN3 LEGEND 710 1TB (ALEG-710-1TCS)', price: 669 },
+            { id: 's2', name: 'SSD INT ADATA M.2 PCIE NVME GEN4 LEGEND 860 1TB (SLEG-860-1000GCS)', price: 689 },
+            { id: 's3', name: 'SSD INT ADATA M.2 PCIE NVME GEN4 LEGEND 860 500GB (SLEG-860-500GCS)', price: 399 },
+            { id: 's4', name: 'SSD INT ADATA SATA SU650 1TB (ASU650SS-1TT-R)', price: 549 },
+            { id: 's5', name: 'SSD INT ADATA SATA SU650 480GB (ASU650SS-480GT-R)', price: 289 },
+            { id: 's6', name: 'SSD INT ADATA SATA SU650 512GB (ASU650SS-512GT-R)', price: 299 },
+            { id: 's7', name: 'SSD INT APACER M.2 PCIE NVME GEN3 AS2280P4U 1TB (AP1TBAS2280P4U-1)', price: 599 },
+            { id: 's8', name: 'SSD INT APACER M.2 PCIE NVME GEN3 AS2280P4U 256GB (AP256GAS2280P4U-1)', price: 259 },
+            { id: 's9', name: 'SSD INT APACER M.2 PCIE NVME GEN3 AS2280P4U 2TB (AP2TBAS2280P4U-1)', price: 1149 },
+            { id: 's10', name: 'SSD INT APACER M.2 PCIE NVME GEN3 AS2280P4U 512GB (AP51GAS2280P4U-1)', price: 394 },
+            { id: 's11', name: 'SSD INT APACER M.2 PCIE NVME GEN4 AS2280Q4X 1TB (AP1TBAS2280Q4X-1)', price: 659 },
+            { id: 's12', name: 'SSD INT APACER M.2 PCIE NVME GEN4 AS2280Q4X 512GB (AP512GAS2280Q4X-1)', price: 399 },
+            { id: 's13', name: 'SSD INT APACER SATA AS350X 128GB (AP128GAS350XR-1)', price: 149 },
+            { id: 's14', name: 'SSD INT APACER SATA AS350X 1TB (AP1TBAS350XR-1)', price: 559 },
+            { id: 's15', name: 'SSD INT APACER SATA AS350X 256GB (AP256GAS350XR-1)', price: 209 },
+            { id: 's16', name: 'SSD INT APACER SATA AS350X 2TB (AP2TBAS350XR-1)', price: 1089 },
+            { id: 's17', name: 'SSD INT APACER SATA AS350X 512GB (AP512GAS350XR-1)', price: 319 },
+            { id: 's18', name: 'SSD INT CORSAIR M.2 PCIE NVME GEN4 MP600 ELITE 1TB (CSSD-F1000GBMP600ENH)', price: 839 },
+            { id: 's19', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN3 S500PRO 1TB (IP380C1TM2D6SQS)', price: 769 },
+            { id: 's20', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN3 S500PRO 512GB', price: 389 },
+            { id: 's21', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN4 S690 1TB (TLC)', price: 769 },
+            { id: 's22', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN4 S690 2TB (TLC)', price: 1369 },
+            { id: 's23', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN4 S690 500GB (TLC)', price: 429 },
+            { id: 's24', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN4 S880 1TB', price: 779 },
+            { id: 's25', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN4 S880 2TB', price: 1399 },
+            { id: 's26', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN4 S880 4TB', price: 3219 },
+            { id: 's27', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN5 S910 PRO 1TB', price: 1099 },
+            { id: 's28', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN5 S910 PRO 2TB', price: 2099 },
+            { id: 's29', name: 'SSD INT FANXIANG M.2 PCIE NVME GEN5 S910 PRO 4TB', price: 3469 },
+            { id: 's30', name: 'SSD INT HUADISK M.2 PCIE NVME GEN4 1TB', price: 719 },
+            { id: 's31', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 KC3000 1TB (SKC3000S/1024G)', price: 1069 },
+            { id: 's32', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 KC3000 2TB (SKC3000D/2048G)', price: 1539 },
+            { id: 's33', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 KC3000 4TB (SKC3000D/4096G)', price: 2799 },
+            { id: 's34', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 KC3000 512GB (SKC3000S/512G)', price: 579 },
+            { id: 's35', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 NV1 1TB (SNVS/1000G)', price: 239 },
+            { id: 's36', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 NV3 1TB (SNV3S/1000G)', price: 749 },
+            { id: 's37', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 NV3 2TB (SNV3S/2000G)', price: 1389 },
+            { id: 's38', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 NV3 4TB (SNV3S/4000G)', price: 2699 },
+            { id: 's39', name: 'SSD INT KINGSTON M.2 PCIE NVME GEN4 NV3 500GB (SNV3S/500G)', price: 479 },
+            { id: 's40', name: 'SSD INT KINGSTON SATA A400 240GB (SA400S37/240G)', price: 319 },
+            { id: 's41', name: 'SSD INT KINGSTON SATA A400 480GB (SA400S37/480G)', price: 479 },
+            { id: 's42', name: 'SSD INT KINGSTON SATA A400 960GB (SA400S37/960G)', price: 739 },
+            { id: 's43', name: 'SSD INT KINGSTON SATA KC600 1TB (SKC600/1024G)', price: 1169 },
+            { id: 's44', name: 'SSD INT KINGSTON SATA KC600 256GB (SKC600/256G)', price: 419 },
+            { id: 's45', name: 'SSD INT LEXAR M.2 PCIE NVME GEN3 NM610 PRO 1TB (LNM610P001T-RNNNG)', price: 639 },
+            { id: 's46', name: 'SSD INT LEXAR M.2 PCIE NVME GEN3 NM610 PRO 2TB (LNM610P002T-RNNNG)', price: 1229 },
+            { id: 's47', name: 'SSD INT LEXAR M.2 PCIE NVME GEN3 NM610 PRO 500GB (LNM610P500G-RNNNG)', price: 369 },
+            { id: 's48', name: 'SSD INT LEXAR M.2 PCIE NVME GEN3 NM620 256GB (LNM620X256G-RNNNG)', price: 269 },
+            { id: 's49', name: 'SSD INT LEXAR M.2 PCIE NVME GEN3 NM620 512GB (LNM620X512G-RNNNG)', price: 389 },
+            { id: 's50', name: 'SSD INT LEXAR M.2 PCIE NVME GEN4 NM790 1TB HEATSINK (LNM790X001T-RN9NG)', price: 789 },
+            { id: 's51', name: 'SSD INT LEXAR M.2 PCIE NVME GEN4 NM790 2TB (LNM790X002T-RNNNG)', price: 1469 },
+            { id: 's52', name: 'SSD INT LEXAR M.2 PCIE NVME GEN4 NM790 512GB (LNM790X512G-RNNNG)', price: 509 },
+            { id: 's53', name: 'SSD INT LEXAR M.2 PCIE NVME GEN4 NQ780 1TB (LNQ780X001T-RNNNG)', price: 699 },
+            { id: 's54', name: 'SSD INT LEXAR M.2 PCIE NVME GEN4 NQ780 512GB (LNQ780X512G-RNNNG)', price: 419 },
+            { id: 's55', name: 'SSD INT LEXAR M.2 PCIE NVME GEN4 NQ790 1TB (LNQ790X001T-RNNNG)', price: 739 },
+            { id: 's56', name: 'SSD INT LEXAR M.2 PCIE NVME GEN4 NQ790 4TB (LNQ790X004T-RNNNG)', price: 1889 },
+            { id: 's57', name: 'SSD INT MSI M.2 SATA SPATIUM S270 480GB (S78-440E350-P83)', price: 289 },
+            { id: 's58', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN4 990EVO PLUS 1TB (MZ-V9S1T0BW)', price: 1109 },
+            { id: 's59', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN4 990EVO PLUS 4TB (MZ-V9S4T0BW)', price: 3999 },
+            { id: 's60', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN4 990PRO 1TB HEATSINK (MZ-V9P1T0CW)', price: 1369 },
+            { id: 's61', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN4 990PRO 2TB (MZ-V9P2T0BW)', price: 2519 },
+            { id: 's62', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN4 990PRO 2TB HEATSINK (MZ-V9P2T0CW)', price: 2629 },
+            { id: 's63', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN4 990PRO 4TB (MZ-V9P4T0BW)', price: 4339 },
+            { id: 's64', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN5 9100PRO 1TB (MZ-VAP1T0BW)', price: 1399 },
+            { id: 's65', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN5 9100PRO 1TB HEATSINK (MZ-VAP1T0CW)', price: 1449 },
+            { id: 's66', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN5 9100PRO 2TB (MZ-VAP2T0BW)', price: 2629 },
+            { id: 's67', name: 'SSD INT SAMSUNG M.2 PCIE NVME GEN5 9100PRO 4TB (MZ-VAP4T0BW)', price: 5159 },
+            { id: 's68', name: 'SSD INT SAMSUNG SATA 870EVO 1TB (MZ-77E1T0BW)', price: 1629 },
+            { id: 's69', name: 'SSD INT SAMSUNG SATA 870EVO 2TB (MZ-77E2T0BW)', price: 3599 },
+            { id: 's70', name: 'SSD INT SAMSUNG SATA 870EVO 500GB (MZ-77E500BW)', price: 1179 },
+            { id: 's71', name: 'SSD INT SAMSUNG SATA 870EVO 8TB (MZ-77E8T0BW)', price: 8999 },
+            { id: 's72', name: 'SSD INT SANDISK M.2 PCIE NVME GEN4 OPTIMUS 5100 1TB (SDSP51100TAN-000E0)', price: 929 },
+            { id: 's73', name: 'SSD INT SANDISK M.2 PCIE NVME GEN4 OPTIMUS 5100 500GB (SDSP51500GAN-000E0)', price: 499 },
+            { id: 's74', name: 'SSD INT SANDISK M.2 PCIE NVME GEN4 OPTIMUS GX PRO 850X 1TB (SDSP81100TAN-000E0)', price: 1509 },
+            { id: 's75', name: 'SSD INT SANDISK M.2 PCIE NVME GEN4 OPTIMUS GX PRO 850X 2TB (SDSP81200TAN-000E0)', price: 2999 },
+            { id: 's76', name: 'SSD INT SANDISK M.2 PCIE NVME GEN4 OPTIMUS GX PRO 850X 2TB WITH HEATSINK (SDSP81200TAH-000E0)', price: 3099 },
+            { id: 's77', name: 'SSD INT TEAM M.2 PCIE NVME GEN4 T-FORCE G50 512GB (TM8FFE512G0C129)', price: 399 },
+            { id: 's78', name: 'SSD INT WD M.2 PCIE NVME GEN3 GREEN SN350 1TB (WDS100T3G0C)', price: 699 },
+            { id: 's79', name: 'SSD INT WD M.2 PCIE NVME GEN3 GREEN SN350 500GB (WDS500G2G0C)', price: 509 },
+            { id: 's80', name: 'SSD INT WD M.2 PCIE NVME GEN4 BLACK SN7100 2TB (WDS200T4X0E-00CJA0)', price: 2149 },
+            { id: 's81', name: 'SSD INT WD M.2 PCIE NVME GEN4 BLACK SN850X 2TB WITH HEATSINK (WDS200T2XHE)', price: 2499 },
+            { id: 's82', name: 'SSD INT WD M.2 PCIE NVME GEN4 BLUE SN5100 1TB (WDS100T5B0E)', price: 1019 },
+            { id: 's83', name: 'SSD INT WD M.2 PCIE NVME GEN4 BLUE SN5100 2TB (WDS200T5B0E)', price: 2019 }
+        ],
+            gpus: [
+            { id: 'g1', name: 'GPU ASUS PCIE AMD R9700 32GB GDDR6 256BIT AI PRO TURBO', price: 9999, recWatt: 850 },
+            { id: 'g2', name: 'GPU ASUS PCIE AMD RX9050 8GB GDDR6 128BIT DUAL OC', price: 1699, recWatt: 500 },
+            { id: 'g3', name: 'GPU ASUS PCIE AMD RX9060XT 16GB GDDR6 128BIT DUAL', price: 2799, recWatt: 600 },
+            { id: 'g4', name: 'GPU ASUS PCIE AMD RX9060XT 16GB GDDR6 128BIT PRIME OC', price: 3599, recWatt: 600 },
+            { id: 'g5', name: 'GPU ASUS PCIE AMD RX9060XT 16GB GDDR6 128BIT TUF GAMING OC', price: 3699, recWatt: 600 },
+            { id: 'g6', name: 'GPU ASUS PCIE AMD RX9070 GRE 12GB GDDR6 192BIT PRIME OC EVO', price: 3459, recWatt: 700 },
+            { id: 'g7', name: 'GPU ASUS PCIE NVIDIA GT710 2GB GDDR5 64BIT EVO', price: 359, recWatt: 400 },
+            { id: 'g8', name: 'GPU ASUS PCIE NVIDIA GT730 2GB GDDR5 64BIT', price: 399, recWatt: 400 },
+            { id: 'g9', name: 'GPU ASUS PCIE NVIDIA GT730 2GB GDDR5 64BIT 4x HDMI', price: 499, recWatt: 400 },
+            { id: 'g10', name: 'GPU ASUS PCIE NVIDIA RTX3050 6GB GDDR6 128BIT DUAL OC', price: 1399, recWatt: 450 },
+            { id: 'g11', name: 'GPU ASUS PCIE NVIDIA RTX4070TI SUPER 16GB GDDR6X 256BIT BTF TUF GAMING OC WHT', price: 3299, recWatt: 750 },
+            { id: 'g12', name: 'GPU ASUS PCIE NVIDIA RTX5060 8GB GDDR7 128BIT DUAL OC', price: 2489, recWatt: 550 },
+            { id: 'g13', name: 'GPU ASUS PCIE NVIDIA RTX5060 8GB GDDR7 128BIT DUAL OC ADVANCED', price: 2489, recWatt: 550 },
+            { id: 'g14', name: 'GPU ASUS PCIE NVIDIA RTX5060TI 16GB GDDR7 128BIT DUAL OC', price: 3949, recWatt: 600 },
+            { id: 'g15', name: 'GPU ASUS PCIE NVIDIA RTX5060TI 16GB GDDR7 128BIT PRIME OC', price: 4099, recWatt: 600 },
+            { id: 'g16', name: 'GPU ASUS PCIE NVIDIA RTX5070 12GB GDDR7 192BIT DUAL OC', price: 4279, recWatt: 700 },
+            { id: 'g17', name: 'GPU ASUS PCIE NVIDIA RTX5070 12GB GDDR7 192BIT ROG STRIX GAMING OC', price: 4999, recWatt: 700 },
+            { id: 'g18', name: 'GPU ASUS PCIE NVIDIA RTX5070 12GB GDDR7 192BIT T1 GAMING OC', price: 4499, recWatt: 700 },
+            { id: 'g19', name: 'GPU ASUS PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT PRIME OC', price: 6459, recWatt: 750 },
+            { id: 'g20', name: 'GPU ASUS PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT ROG STRIX GAMING OC', price: 7599, recWatt: 750 },
+            { id: 'g21', name: 'GPU ASUS PCIE NVIDIA RTX5080 16GB GDDR7 256BIT NOCTUA OC', price: 9999, recWatt: 850 },
+            { id: 'g22', name: 'GPU ASUS PCIE NVIDIA RTX5080 16GB GDDR7 256BIT PRIME OC', price: 8599, recWatt: 850 },
+            { id: 'g23', name: 'GPU ASUS PCIE NVIDIA RTX5080 16GB GDDR7 256BIT PROART OC', price: 9799, recWatt: 850 },
+            { id: 'g24', name: 'GPU ASUS PCIE NVIDIA RTX5080 16GB GDDR7 256BIT ROG ASTRAL GAMING OC HATSUNE MIKU', price: 9999, recWatt: 850 },
+            { id: 'g25', name: 'GPU ASUS PCIE NVIDIA RTX5090 32GB GDDR7 512BIT PROART OC', price: 25699, recWatt: 1000 },
+            { id: 'g26', name: 'GPU ASUS PCIE NVIDIA RTX5090 32GB GDDR7 512BIT ROG ASTRAL EDITION 20', price: 33999, recWatt: 1000 },
+            { id: 'g27', name: 'GPU ASUS PCIE NVIDIA RTX5090 32GB GDDR7 512BIT ROG ASTRAL GAMING OC', price: 25989, recWatt: 1000 },
+            { id: 'g28', name: 'GPU COLORFUL PCIE NVIDIA GT710 2GB GDDR3 64BIT', price: 299, recWatt: 400 },
+            { id: 'g29', name: 'GPU GIGABYTE PCIE NVIDIA RTX3050 6GB GDDR6 128BIT WINDFORCE OC V2', price: 1299, recWatt: 450 },
+            { id: 'g30', name: 'GPU GIGABYTE PCIE NVIDIA RTX5060 8GB GDDR7 128BIT EAGLE OC ICE', price: 2199, recWatt: 550 },
+            { id: 'g31', name: 'GPU GIGABYTE PCIE NVIDIA RTX5060 8GB GDDR7 128BIT WINDFORCE 2X MAX OC', price: 2199, recWatt: 550 },
+            { id: 'g32', name: 'GPU GIGABYTE PCIE NVIDIA RTX5070 12GB GDDR7 192BIT AERO OC', price: 4399, recWatt: 700 },
+            { id: 'g33', name: 'GPU GIGABYTE PCIE NVIDIA RTX5070 12GB GDDR7 192BIT AORUS INFINITY', price: 4999, recWatt: 700 },
+            { id: 'g34', name: 'GPU GIGABYTE PCIE NVIDIA RTX5070 12GB GDDR7 192BIT AORUS MASTER', price: 4879, recWatt: 700 },
+            { id: 'g35', name: 'GPU GIGABYTE PCIE NVIDIA RTX5070 12GB GDDR7 192BIT GAMING OC', price: 4359, recWatt: 700 },
+            { id: 'g36', name: 'GPU GIGABYTE PCIE NVIDIA RTX5070 12GB GDDR7 192BIT WINDFORCE 3X OC', price: 4199, recWatt: 700 },
+            { id: 'g37', name: 'GPU GIGABYTE PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT AERO OC', price: 6499, recWatt: 750 },
+            { id: 'g38', name: 'GPU GIGABYTE PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT GAMING OC', price: 6479, recWatt: 750 },
+            { id: 'g39', name: 'GPU GIGABYTE PCIE NVIDIA RTX5080 16GB GDDR7 256BIT AERO OC', price: 8599, recWatt: 850 },
+            { id: 'g40', name: 'GPU GIGABYTE PCIE NVIDIA RTX5080 16GB GDDR7 256BIT AORUS INFINITY', price: 9399, recWatt: 850 },
+            { id: 'g41', name: 'GPU GIGABYTE PCIE NVIDIA RTX5080 16GB GDDR7 256BIT AORUS MASTER ICE', price: 9099, recWatt: 850 },
+            { id: 'g42', name: 'GPU GIGABYTE PCIE NVIDIA RTX5090 32GB GDDR7 512BIT AORUS STEALTH ICE', price: 26399, recWatt: 1000 },
+            { id: 'g43', name: 'GPU GIGABYTE PCIE NVIDIA RTX5090 32GB GDDR7 512BIT GAMING OC', price: 24999, recWatt: 1000 },
+            { id: 'g44', name: 'GPU LEADTEK PCIE NVIDIA QUADRO RTX PRO 2000 BLACKWELL 16GB GDDR7 ECC 128BIT WHITE BOX', price: 8899, recWatt: 550 },
+            { id: 'g45', name: 'GPU LEADTEK PCIE NVIDIA QUADRO T1000 8GB GDDR6 128BIT', price: 2199, recWatt: 450 },
+            { id: 'g46', name: 'GPU MSI PCIE NVIDIA RTX3050 6GB GDDR6 128BIT VENTUS 2X E OC', price: 1299, recWatt: 450 },
+            { id: 'g47', name: 'GPU MSI PCIE NVIDIA RTX5060 8GB GDDR7 128BIT VENTUS 2X OC', price: 2399, recWatt: 550 },
+            { id: 'g48', name: 'GPU MSI PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT GAMING TRIO OC', price: 6399, recWatt: 750 },
+            { id: 'g49', name: 'GPU MSI PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT SHADOW 3X OC', price: 6299, recWatt: 750 },
+            { id: 'g50', name: 'GPU MSI PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT VENTUS 3X OC', price: 6299, recWatt: 750 },
+            { id: 'g51', name: 'GPU MSI PCIE NVIDIA RTX5080 16GB GDDR7 256BIT INSPIRE 3X OC', price: 8699, recWatt: 850 },
+            { id: 'g52', name: 'GPU MSI PCIE NVIDIA RTX5080 16GB GDDR7 256BIT VENTUS 3X OC PLUS', price: 8699, recWatt: 850 },
+            { id: 'g53', name: 'GPU SAPPHIRE PCIE AMD RX9060XT 16GB GDDR6 128BIT PULSE GAMING OC', price: 2499, recWatt: 600 },
+            { id: 'g54', name: 'GPU ZOTAC PCIE NVIDIA RTX3050 6GB GDDR6 128BIT TWIN EDGE OC', price: 1099, recWatt: 450 },
+            { id: 'g55', name: 'GPU ZOTAC PCIE NVIDIA RTX3060 12GB GDDR6 192BIT TWIN EDGE', price: 1999, recWatt: 550 },
+            { id: 'g56', name: 'GPU ZOTAC PCIE NVIDIA RTX5060 8GB GDDR7 128BIT LP', price: 1999, recWatt: 550 },
+            { id: 'g57', name: 'GPU ZOTAC PCIE NVIDIA RTX5060 8GB GDDR7 128BIT TWIN EDGE OC', price: 2099, recWatt: 550 },
+            { id: 'g58', name: 'GPU ZOTAC PCIE NVIDIA RTX5060 8GB GDDR7 128BIT TWIN EDGE PLUS', price: 2099, recWatt: 550 },
+            { id: 'g59', name: 'GPU ZOTAC PCIE NVIDIA RTX5060TI 16GB GDDR7 128BIT AMP', price: 3689, recWatt: 600 },
+            { id: 'g60', name: 'GPU ZOTAC PCIE NVIDIA RTX5070 12GB GDDR7 192BIT SOLID OC', price: 4199, recWatt: 700 },
+            { id: 'g61', name: 'GPU ZOTAC PCIE NVIDIA RTX5070 12GB GDDR7 192BIT TWIN EDGE OC', price: 4049, recWatt: 700 },
+            { id: 'g62', name: 'GPU ZOTAC PCIE NVIDIA RTX5070TI 16GB GDDR7 256BIT SOLID CORE OC WHT EDITION', price: 6789, recWatt: 750 },
+            { id: 'g63', name: 'GPU ZOTAC PCIE NVIDIA RTX5080 16GB GDDR7 256BIT SOLID CORE OC', price: 8099, recWatt: 850 },
+            { id: 'g64', name: 'GPU ZOTAC PCIE NVIDIA RTX5080 16GB GDDR7 256BIT SOLID OC WHT', price: 8199, recWatt: 850 }
+        ],
+            psus: [
+            { id: 'p1', name: 'PSU ASUS MODULAR PRIME AP 750W 80PLUS GOLD (PRIME AP-750G)', price: 399, watt: 750 },
+            { id: 'p2', name: 'PSU ASUS MODULAR PRIME AP 850W 80PLUS GOLD (PRIME AP-850G)', price: 499, watt: 850 },
+            { id: 'p3', name: 'PSU ASUS MODULAR ROG STRIX ATX 3.1 1000W 80PLUS PLATINUM WHT', price: 1399, watt: 1000 },
+            { id: 'p4', name: 'PSU ASUS MODULAR ROG STRIX AURA 750W 80PLUS GOLD', price: 799, watt: 750 },
+            { id: 'p5', name: 'PSU ASUS MODULAR ROG STRIX AURA ATX 3.0 1000W 80PLUS GOLD', price: 1199, watt: 1000 },
+            { id: 'p6', name: 'PSU ASUS MODULAR ROG THOR 1200W 80PLUS PLATINUM III', price: 2099, watt: 1200 },
+            { id: 'p7', name: 'PSU ASUS MODULAR ROG THOR 1200W 80PLUS PLATINUM III HATSUNE MIKU', price: 2399, watt: 1200 },
+            { id: 'p8', name: 'PSU ASUS MODULAR ROG THOR 3000W 80PLUS TITANIUM III EDITION 20', price: 3999, watt: 3000 },
+            { id: 'p9', name: 'PSU ASUS MODULAR TUF GAMING EVO ATX 3.1 850W 80PLUS GOLD', price: 599, watt: 850 },
+            { id: 'p10', name: 'PSU BE QUIET! MODULAR SFX-L 600W 80PLUS GOLD (BN679)', price: 399, watt: 600 },
+            { id: 'p11', name: 'PSU COOLER MASTER MODULAR GX III 1250 1250W 80PLUS GOLD', price: 899, watt: 1250 },
+            { id: 'p12', name: 'PSU COOLER MASTER MODULAR MWE V2 ATX 3.2 1250W 80PLUS GOLD', price: 799, watt: 1250 },
+            { id: 'p13', name: 'PSU COOLER MASTER MODULAR MWE V3 750W ATX 3.1 80PLUS GOLD', price: 359, watt: 750 },
+            { id: 'p14', name: 'PSU COOLER MASTER MWE V3 650W 80PLUS BRONZE', price: 219, watt: 650 },
+            { id: 'p15', name: 'PSU COOLER MASTER MWE V3 650W ATX 3.1 80PLUS GOLD', price: 299, watt: 650 },
+            { id: 'p16', name: 'PSU COOLER MASTER MWE V3 750W 80PLUS BRONZE', price: 269, watt: 750 },
+            { id: 'p17', name: 'PSU COOLER MASTER MWE V3 750W ATX 3.1 80PLUS GOLD', price: 329, watt: 750 },
+            { id: 'p18', name: 'PSU COOLER MASTER MWE V3 850W ATX 3.1 80PLUS GOLD', price: 369, watt: 850 },
+            { id: 'p19', name: 'PSU CORSAIR MODULAR RMe ATX 3.1 1000W 80PLUS GOLD WHT', price: 799, watt: 1000 },
+            { id: 'p20', name: 'PSU CORSAIR MODULAR RMe ATX 3.1 750W 80PLUS GOLD', price: 469, watt: 750 },
+            { id: 'p21', name: 'PSU CORSAIR MODULAR RMe ATX 3.1 850W 80PLUS GOLD', price: 569, watt: 850 },
+            { id: 'p22', name: 'PSU DEEPCOOL MODULAR PN750M 750W 80PLUS GOLD', price: 469, watt: 750 },
+            { id: 'p23', name: 'PSU DEEPCOOL PF550 550W 80PLUS', price: 149, watt: 550 },
+            { id: 'p24', name: 'PSU DEEPCOOL PF650D V2 650W 80PLUS SILVER', price: 199, watt: 650 },
+            { id: 'p25', name: 'PSU DEEPCOOL PF750D V2 750W 80PLUS SILVER', price: 239, watt: 750 },
+            { id: 'p26', name: 'PSU DEEPCOOL PF850D V2 850W 80PLUS SILVER', price: 269, watt: 850 },
+            { id: 'p27', name: 'PSU DEEPCOOL PFX 600W 80PLUS BRONZE', price: 199, watt: 600 },
+            { id: 'p28', name: 'PSU DEEPCOOL PFX 700W 80PLUS BRONZE', price: 209, watt: 700 },
+            { id: 'p29', name: 'PSU DEEPCOOL PN650D 650W 80PLUS GOLD', price: 369, watt: 650 },
+            { id: 'p30', name: 'PSU DEEPCOOL PN750D 750W 80PLUS GOLD', price: 409, watt: 750 },
+            { id: 'p31', name: 'PSU FSP MODULAR CANNON PRO ATX 3.0 2000W 80PLUS GOLD', price: 1399, watt: 2000 },
+            { id: 'p32', name: 'PSU FSP MODULAR HYDRO PTM X PRO ATX 3.1 1200W 80PLUS PLATINUM', price: 799, watt: 1200 },
+            { id: 'p33', name: 'PSU FSP MODULAR PTM PRO ATX 3.1 1650W 80PLUS PLATINUM', price: 1049, watt: 1650 },
+            { id: 'p34', name: 'PSU FSP MODULAR VITA GM ATX 3.1 750W 80PLUS GOLD', price: 349, watt: 750 },
+            { id: 'p35', name: 'PSU FSP MODULAR VITA GM ATX 3.1 850W 80PLUS GOLD', price: 569, watt: 850 },
+            { id: 'p36', name: 'PSU FSP MODULAR VITA PM ATX 3.1 1000W 80PLUS PLATINUM', price: 599, watt: 1000 },
+            { id: 'p37', name: 'PSU FSP VIC BD ATX 3.1 650W 80PLUS BRONZE', price: 199, watt: 650 },
+            { id: 'p38', name: 'PSU FSP VIC BD ATX 3.1 750W 80PLUS BRONZE', price: 229, watt: 750 },
+            { id: 'p39', name: 'PSU FSP VIC GD ATX 3.1 750W 80PLUS GOLD', price: 299, watt: 750 },
+            { id: 'p40', name: 'PSU FSP VIC GD ATX 3.1 850W 80PLUS GOLD', price: 329, watt: 850 },
+            { id: 'p41', name: 'PSU FSP VITA BD ATX 3.1 750W 80PLUS BRONZE', price: 289, watt: 750 },
+            { id: 'p42', name: 'PSU FSP VITA GD ATX 3.1 750W 80PLUS GOLD', price: 349, watt: 750 },
+            { id: 'p43', name: 'PSU GAMEMAX GP-650 650W 80PLUS BRONZE WHT', price: 199, watt: 650 },
+            { id: 'p44', name: 'PSU GAMEMAX MODULAR VP-700W RGB 80PLUS BRONZE', price: 199, watt: 700 },
+            { id: 'p45', name: 'PSU GIGABYTE MODULAR ATX 3.1 UD 1000W 80PLUS GOLD V2', price: 649, watt: 1000 },
+            { id: 'p46', name: 'PSU GIGABYTE MODULAR ATX 3.1 UD 1000W 80PLUS GOLD V2 ICE', price: 599, watt: 1000 },
+            { id: 'p47', name: 'PSU GIGABYTE MODULAR ATX 3.1 UD 750W 80PLUS GOLD V2', price: 399, watt: 750 },
+            { id: 'p48', name: 'PSU GIGABYTE MODULAR ATX 3.1 UD 850W 80PLUS GOLD V2', price: 449, watt: 850 },
+            { id: 'p49', name: 'PSU GIGABYTE P650 650W 80PLUS SILVER', price: 249, watt: 650 },
+            { id: 'p50', name: 'PSU INVASION EX-500 500W 80PLUS', price: 129, watt: 500 },
+            { id: 'p51', name: 'PSU INVASION SLD-550W 80PLUS BRONZE', price: 149, watt: 550 },
+            { id: 'p52', name: 'PSU LIAN LI MODULAR ATX 3.1 RS1000G 1000W 80PLUS GOLD WHT', price: 799, watt: 1000 },
+            { id: 'p53', name: 'PSU LIAN LI MODULAR EDGE ATX 3.1 EG1300 1300W 80PLUS PLATINUM WHT', price: 1099, watt: 1300 },
+            { id: 'p54', name: 'PSU MBOX ATX 3.1 650W BRONZE 80PLUS', price: 169, watt: 650 },
+            { id: 'p55', name: 'PSU MBOX EVO ATX 3.1 750W 80PLUS GOLD', price: 289, watt: 750 },
+            { id: 'p56', name: 'PSU MBOX EVO ATX 3.1 850W 80PLUS GOLD', price: 319, watt: 850 },
+            { id: 'p57', name: 'PSU MSI MODULAR MAG A750GLS ATX 3.1 750W 80PLUS GOLD', price: 539, watt: 750 },
+            { id: 'p58', name: 'PSU MSI MODULAR MAG A850GL ATX 3.1 850W 80PLUS GOLD', price: 499, watt: 850 },
+            { id: 'p59', name: 'PSU NZXT MODULAR C750 CORE ATX3.1 750W 80PLUS GOLD', price: 449, watt: 750 },
+            { id: 'p60', name: 'PSU NZXT MODULAR C850 CORE ATX3.1 850W 80PLUS GOLD', price: 499, watt: 850 },
+            { id: 'p61', name: 'PSU REDRAGON RGPS-600W 80PLUS BRONZE', price: 169, watt: 600 },
+            { id: 'p62', name: 'PSU SUPER FLOWER MODULAR LEADEX ATX 3.1 1700W 80PLUS TITANIUM', price: 1499, watt: 1700 },
+            { id: 'p63', name: 'PSU SUPER FLOWER MODULAR LEADEX ATX 3.1 2200W 80PLUS TITANIUM', price: 1699, watt: 2200 },
+            { id: 'p64', name: 'PSU SUPER FLOWER MODULAR LEADEX ATX 3.1 2800W 80PLUS TITANIUM', price: 2499, watt: 2800 },
+            { id: 'p65', name: 'PSU SUPER FLOWER MODULAR ZILLION ATX 3.1 1250W 80PLUS GOLD', price: 549, watt: 1250 },
+            { id: 'p66', name: 'PSU SUPER FLOWER MODULAR ZILLION 850W CYBERNETICS PLATINUM', price: 439, watt: 850 },
+            { id: 'p67', name: 'PSU SUPER FLOWER MODULAR ZILLION FG 650W 80PLUS GOLD', price: 349, watt: 650 },
+            { id: 'p68', name: 'PSU SUPER FLOWER ZILLION 650W 80PLUS BRONZE', price: 199, watt: 650 }
+        ],
+            coolers: [
+            { id: 'c1', name: 'COOLER CPU ARCTIC FREEZER 34 eSportsDUO WHITE (ACFRE00074A)', price: 199 },
+            { id: 'c2', name: 'COOLER CPU ARCTIC FREEZER 36', price: 119 },
+            { id: 'c3', name: 'COOLER CPU ARCTIC FREEZER 36 ARGB BLK', price: 169 },
+            { id: 'c4', name: 'COOLER CPU ARCTIC FREEZER 36 ARGB WHT', price: 169 },
+            { id: 'c5', name: 'COOLER CPU ARCTIC FREEZER 4U-M AMPERE SERVER', price: 249 },
+            { id: 'c6', name: 'COOLER CPU COOLER MASTER HYPER 212 HALO (RR-S4WW-20PA-R1) WHT', price: 99 },
+            { id: 'c7', name: 'COOLER CPU COOLER MASTER HYPER 212 HALO (RR-S4WW-20PA-RY) SF6 RYU', price: 199 },
+            { id: 'c8', name: 'COOLER CPU COOLER MASTER HYPER 212 SPECTRUM V3 (RR-S4NA-17PA-R1)', price: 79 },
+            { id: 'c9', name: 'COOLER CPU COOLER MASTER HYPER 612 APEX (MAP-T6PN-225PK-R1)', price: 249 },
+            { id: 'c10', name: 'COOLER CPU COOLER MASTER HYPER 612 APEX (MAP-T6PN-225PW-CW) WHT', price: 239 },
+            { id: 'c11', name: 'COOLER CPU COOLER MASTER V4 ALPHA BLK (MAZ-T2HP-217PK-R1)', price: 139 },
+            { id: 'c12', name: 'COOLER CPU COOLER MASTER V8 ACE 3DHP AMD (MAM-T6HA-225PK-RB) BLK', price: 399 },
+            { id: 'c13', name: 'COOLER CPU COOLER MASTER V8 ACE 3DHP INTEL (MAM-T6HP-225PK-RB) BLK', price: 399 },
+            { id: 'c14', name: 'COOLER CPU DEEPCOOL AG400 G2 ARGB (R-AG400-BKAMMG2-G)', price: 99 },
+            { id: 'c15', name: 'COOLER CPU DEEPCOOL AK400 DIGITAL PRO (R-AK400-WHAPMN-G) WHT', price: 199 },
+            { id: 'c16', name: 'COOLER CPU DEEPCOOL AK400 DIGITAL SE (R-AK400-WHADMN-GJD) WHT', price: 129 },
+            { id: 'c17', name: 'COOLER CPU DEEPCOOL AK400 G2 (R-AK400G2-WHNNMN-GJD) WHT', price: 159 },
+            { id: 'c18', name: 'COOLER CPU DEEPCOOL AK500 (R-AK500-WHNNMT-G) WHT', price: 229 },
+            { id: 'c19', name: 'COOLER CPU DEEPCOOL AK500 DIGITAL WHT (R-AK500-WHADMN-G)', price: 239 },
+            { id: 'c20', name: 'COOLER CPU DEEPCOOL AK500 G2 (R-AK500G2-WHNNMN-GJD) WHT', price: 199 },
+            { id: 'c21', name: 'COOLER CPU DEEPCOOL AK500S DIGITAL SE (R-AK500S-BKADMN-GJD) BLK', price: 159 },
+            { id: 'c22', name: 'COOLER CPU DEEPCOOL AK620 G2 (R-AK620-BKNNMN-GJD) BLK', price: 249 },
+            { id: 'c23', name: 'COOLER CPU DEEPCOOL AK620 G2 (R-AK620-WHNNMN-GJD) WHT', price: 259 },
+            { id: 'c24', name: 'COOLER CPU DEEPCOOL AK700 DIGITAL (R-AK700-WHNDMN-GJD) WHT', price: 249 },
+            { id: 'c25', name: 'COOLER CPU DEEPCOOL AN400 BK LP (R-AN400-BKWNMN-G)', price: 199 },
+            { id: 'c26', name: 'COOLER CPU DEEPCOOL AN400 LP (R-AN400-SRWNMN-G)', price: 189 },
+            { id: 'c27', name: 'COOLER CPU DEEPCOOL ASSASSIN VC ELITE (R-ASN4-WHNVNN-GJD) WHT', price: 499 },
+            { id: 'c28', name: 'COOLER CPU ICEBERG ICSSLEET X6 ARGB', price: 199 },
+            { id: 'c29', name: 'COOLER CPU ID-COOLING FROZN A410 ARGB WHT', price: 139 },
+            { id: 'c30', name: 'COOLER CPU ID-COOLING SE-214 XT V2 ARGB BLK', price: 69 },
+            { id: 'c31', name: 'COOLER CPU INVASION AEOLUS 50 PRO RGB WHT', price: 149 },
+            { id: 'c32', name: 'COOLER CPU INVASION SC-400 AIR ARGB', price: 99 },
+            { id: 'c33', name: 'COOLER CPU SUDOKOO SK700 (R-SK700-BKNPAN-GAS) BLK', price: 299 },
+            { id: 'c34', name: 'COOLER CPU SUDOKOO SK700V DIGITAL (R-SK700V-WHNDAN-GAS) WHT', price: 349 },
+            { id: 'c35', name: 'COOLER CPU THERMALRIGHT AXP-90 X47 LP BLK', price: 139 },
+            { id: 'c36', name: 'COOLER CPU VALKYRIE R125L-LOKI ARGB LCD BLK', price: 359 },
+            { id: 'c37', name: 'COOLER CPU VALKYRIE R125L-VALKYRIE ARGB LCD WHT', price: 359 },
+            { id: 'c38', name: 'WATER COOLING AIO ARCTIC LIQUID FREEZER III 240 ARGB 240mm', price: 399 },
+            { id: 'c39', name: 'WATER COOLING AIO ARCTIC LIQUID FREEZER III 240 ARGB 240mm WHT', price: 399 },
+            { id: 'c40', name: 'WATER COOLING AIO ARCTIC LIQUID FREEZER III PRO 360 360mm', price: 499 },
+            { id: 'c41', name: 'WATER COOLING AIO ARCTIC LIQUID FREEZER III PRO 360 ARGB 360mm', price: 579 },
+            { id: 'c42', name: 'WATER COOLING AIO ASUS PRIME LC360 ARGB 360mm BLK', price: 399 },
+            { id: 'c43', name: 'WATER COOLING AIO ASUS PROART LC420 NOCTUA 420mm', price: 1399 },
+            { id: 'c44', name: 'WATER COOLING AIO ASUS ROG RYUJIN III 360 ARGB 360mm WHT', price: 1499 },
+            { id: 'c45', name: 'WATER COOLING AIO ASUS ROG RYUJIN III 360 ARGB EXTREME 360mm WHT', price: 1899 },
+            { id: 'c46', name: 'WATER COOLING AIO ASUS ROG RYUO III 240 ARGB 240mm', price: 599 },
+            { id: 'c47', name: 'WATER COOLING AIO ASUS ROG RYUO III 240 ARGB 240mm WHT EDITION', price: 599 },
+            { id: 'c48', name: 'WATER COOLING AIO ASUS ROG RYUO III 360 ARGB 360mm WHITE EDITION', price: 1099 },
+            { id: 'c49', name: 'WATER COOLING AIO ASUS ROG RYUO IV 360 ARGB 360mm HATSUNE MIKU EDITION', price: 1410 },
+            { id: 'c50', name: 'WATER COOLING AIO ASUS ROG RYUO IV SLC 360 ARGB 360mm', price: 1399 },
+            { id: 'c51', name: 'WATER COOLING AIO ASUS ROG RYUO IV SLC 360 ARGB 360mm WHT', price: 1449 },
+            { id: 'c52', name: 'WATER COOLING AIO ASUS TUF GAMING LC III LCD 360 ARGB 360mm', price: 649 },
+            { id: 'c53', name: 'WATER COOLING AIO COOLER MASTER ELITE LIQUID 240 ARGB 240mm BLK', price: 149 },
+            { id: 'c54', name: 'WATER COOLING AIO COOLER MASTER ML240 CORE NEX DIGITAL ARGB 240mm BLK', price: 279 },
+            { id: 'c55', name: 'WATER COOLING AIO COOLER MASTER ML240L CORE ARGB 240mm BLK', price: 239 },
+            { id: 'c56', name: 'WATER COOLING AIO COOLER MASTER ML360 CORE LCD ARGB 360mm WHT', price: 399 },
+            { id: 'c57', name: 'WATER COOLING AIO COOLER MASTER ML360 CORE NEX DIGITAL ARGB 360mm WHT', price: 329 },
+            { id: 'c58', name: 'WATER COOLING AIO CORSAIR HYDRO H150I RGB ELITE 360mm (CW-9060079-WW) WHT', price: 699 },
+            { id: 'c59', name: 'WATER COOLING AIO CORSAIR iCUE LINK H150I RGB 360mm (CW-9061006-WW) WHT', price: 499 },
+            { id: 'c60', name: 'WATER COOLING AIO CORSAIR NAUTILUS ARGB 240mm (CW-9060094-WW) WHT', price: 399 },
+            { id: 'c61', name: 'WATER COOLING AIO CORSAIR NAUTILUS ARGB 360mm (CW-9060095-WW) WHT', price: 449 },
+            { id: 'c62', name: 'WATER COOLING AIO CORSAIR NAUTILUS RS LCD 360 360mm (CW-9061034-WW) WHT', price: 649 },
+            { id: 'c63', name: 'WATER COOLING AIO DEEPCOOL LD240 240mm (R-LD240-BKMSN-G-1)', price: 299 },
+            { id: 'c64', name: 'WATER COOLING AIO DEEPCOOL LD240 ARGB 240mm (R-LD240-WHDMMN-G-1) WHT', price: 299 },
+            { id: 'c65', name: 'WATER COOLING AIO DEEPCOOL LP240 240mm (R-LP240-BKMSNC-G-1)', price: 399 },
+            { id: 'c66', name: 'WATER COOLING AIO DEEPCOOL LQ240 240mm (R-LQ240-BKLSMW-G-1)', price: 399 },
+            { id: 'c67', name: 'WATER COOLING AIO DEEPCOOL LS520 SE DIGITAL 240mm (R-LS520-WHAMMD-G-1) WHT', price: 199 },
+            { id: 'c68', name: 'WATER COOLING AIO DEEPCOOL LT240 ARGB 240mm (R-LT240-BKAMNC-G-1) BLK', price: 299 },
+            { id: 'c69', name: 'WATER COOLING AIO DEEPCOOL LT240 ARGB 240mm (R-LT240-WHAMNC-G-1) WHT', price: 299 },
+            { id: 'c70', name: 'WATER COOLING AIO DEEPCOOL MYSTIQUE 240 240mm (R-LX550-BKDSNC-G-1)', price: 299 },
+            { id: 'c71', name: 'WATER COOLING AIO DEEPCOOL MYSTIQUE 240 ARGB 240mm (R-LX550-BKADSNC-G-1)', price: 499 },
+            { id: 'c72', name: 'WATER COOLING AIO GAMEMAX HAILSTORM 360 LCD 360mm WHT', price: 449 },
+            { id: 'c73', name: 'WATER COOLING AIO GIGABYTE AORUS WATERFORCE II 240 240mm BLK', price: 399 },
+            { id: 'c74', name: 'WATER COOLING AIO GIGABYTE GAMING 240 240mm BLK', price: 349 },
+            { id: 'c75', name: 'WATER COOLING AIO GIGABYTE GAMING 240 240mm ICE', price: 349 },
+            { id: 'c76', name: 'WATER COOLING AIO GIGABYTE GAMING 360 360mm BLK', price: 449 },
+            { id: 'c77', name: 'WATER COOLING AIO GIGABYTE GAMING 360 360mm ICE', price: 449 },
+            { id: 'c78', name: 'WATER COOLING AIO ID-COOLING FX240 INF ARGB 240mm BLK (BULK)', price: 159 },
+            { id: 'c79', name: 'WATER COOLING AIO ID-COOLING FX240 INF ARGB 240mm WHT', price: 219 },
+            { id: 'c80', name: 'WATER COOLING AIO ID-COOLING FX240 LCD ARGB 240mm BLK', price: 229 },
+            { id: 'c81', name: 'WATER COOLING AIO ID-COOLING FX240 LCD ARGB 240mm WHT', price: 239 },
+            { id: 'c82', name: 'WATER COOLING AIO ID-COOLING FX360 LCD ARGB 360mm BLK', price: 269 },
+            { id: 'c83', name: 'WATER COOLING AIO ID-COOLING FX360 LCD ARGB 360mm WHT', price: 289 },
+            { id: 'c84', name: 'WATER COOLING AIO ID-COOLING SPACE SL240 LCD 240mm BLK', price: 499 },
+            { id: 'c85', name: 'WATER COOLING AIO ID-COOLING SPACE SL240 LCD 240mm WHT', price: 519 },
+            { id: 'c86', name: 'WATER COOLING AIO INVASION AD-240-RT 240mm BLK', price: 199 },
+            { id: 'c87', name: 'WATER COOLING AIO INVASION AD-240-RT 240mm WHT', price: 199 },
+            { id: 'c88', name: 'WATER COOLING AIO INVASION AD-360-RT 360mm BLK', price: 249 },
+            { id: 'c89', name: 'WATER COOLING AIO INVASION AD-360-RT 360mm WHT', price: 249 },
+            { id: 'c90', name: 'WATER COOLING AIO INVASION SC-240 240mm BLK', price: 149 },
+            { id: 'c91', name: 'WATER COOLING AIO INVASION SC-240 240mm WHT', price: 169 },
+            { id: 'c92', name: 'WATER COOLING AIO INVASION SC-360 360mm WHT', price: 249 },
+            { id: 'c93', name: 'WATER COOLING AIO INVASION YZ-240 240mm BLK', price: 149 },
+            { id: 'c94', name: 'WATER COOLING AIO INVASION YZ-240 240mm WHT', price: 149 },
+            { id: 'c95', name: 'WATER COOLING AIO INVASION+ DY-240 LCD BLK', price: 299 },
+            { id: 'c96', name: 'WATER COOLING AIO INVASION+ FROST VISION 240 240mm BLK', price: 309 },
+            { id: 'c97', name: 'WATER COOLING AIO INVASION+ FROST VISION 240 240mm WHT', price: 309 },
+            { id: 'c98', name: 'WATER COOLING AIO INVASION+ FROST VISION 360 360mm BLK', price: 349 },
+            { id: 'c99', name: 'WATER COOLING AIO INVASION+ FROST VISION 360 360mm WHT', price: 349 },
+            { id: 'c100', name: 'WATER COOLING AIO INVASION+ POSEIDON 360 CURVE LCD 360mm BLK', price: 799 },
+            { id: 'c101', name: 'WATER COOLING AIO INVASION+ POSEIDON 360 CURVE LCD 360mm WHT', price: 799 },
+            { id: 'c102', name: 'WATER COOLING AIO LIAN LI GA II TRINITY 240 SL-INF 240mm (GA2T24INB) BLK', price: 599 },
+            { id: 'c103', name: 'WATER COOLING AIO LIAN LI GA II TRINITY 240 SL-INF 240mm (GA2T24INW) WHT', price: 599 },
+            { id: 'c104', name: 'WATER COOLING AIO LIAN LI GALAHAD UNIFAN SL 240mm WHT', price: 299 },
+            { id: 'c105', name: 'WATER COOLING AIO LIAN LI HYDROSHIFT 2 OLED CURVED TL FLEX 360 360mm (GHS2OLDC36TB) BLK', price: 1499 },
+            { id: 'c106', name: 'WATER COOLING AIO LIAN LI HYDROSHIFT 2 OLED CURVED TL FLEX 360 360mm (GHS2OLDC36TW) WHT', price: 1599 },
+            { id: 'c107', name: 'WATER COOLING AIO LIAN LI HYDROSHIFT LCD 360R (GHSLCD36RB) BLK', price: 899 },
+            { id: 'c108', name: 'WATER COOLING AIO LIAN LI HYDROSHIFT LCD 360TL 360mm (GHSLCD36TW) WHT', price: 799 },
+            { id: 'c109', name: 'WATER COOLING AIO NZXT KRAKEN 240 RGB 240mm (RL-KR240-B1)', price: 499 },
+            { id: 'c110', name: 'WATER COOLING AIO NZXT KRAKEN CORE 240 RGB 240mm (RL-KR24C-B1)', price: 349 },
+            { id: 'c111', name: 'WATER COOLING AIO NZXT KRAKEN ELITE 360 RGB V2 360mm (RL-KR36E-W2) WHT', price: 1099 },
+            { id: 'c112', name: 'WATER COOLING AIO TCOMAS ANGL 4" LCD 360 360mm BLK', price: 499 },
+            { id: 'c113', name: 'WATER COOLING AIO TCOMAS ANGL 4" LCD 360 360mm WHT', price: 499 },
+            { id: 'c114', name: 'WATER COOLING AIO TCOMAS CUBE 360 360mm BLK', price: 359 },
+            { id: 'c115', name: 'WATER COOLING AIO TCOMAS CUBE 360 360mm WHT', price: 359 },
+            { id: 'c116', name: 'WATER COOLING AIO TCOMAS EXIT D3 360 360mm BLK', price: 959 },
+            { id: 'c117', name: 'WATER COOLING AIO TCOMAS EXIT D3 360 360mm WHT', price: 959 },
+            { id: 'c118', name: 'WATER COOLING AIO TCOMAS LE200 360 360mm BLK', price: 339 },
+            { id: 'c119', name: 'WATER COOLING AIO TCOMAS LE200 360 360mm WHT', price: 339 },
+            { id: 'c120', name: 'WATER COOLING AIO TCOMAS LX800 PRO 360 360mm BLK', price: 799 },
+            { id: 'c121', name: 'WATER COOLING AIO TCOMAS LX800 PRO 360 360mm WHT', price: 799 },
+            { id: 'c122', name: 'WATER COOLING AIO TCOMAS NEOX CURVED LCD 360 360mm BLK', price: 1099 },
+            { id: 'c123', name: 'WATER COOLING AIO TCOMAS NEOX CURVED LCD 360 360mm WHT', price: 1099 },
+            { id: 'c124', name: 'WATER COOLING AIO THERMALRIGHT FROZEN MAGIC SCENIC ARGB 240 240mm', price: 199 },
+            { id: 'c125', name: 'WATER COOLING AIO THERMALTAKE FLOE ULTRA 240 RGB 240mm (CL-W349-PL12SW-A)', price: 499 },
+            { id: 'c126', name: 'WATER COOLING AIO THERMALTAKE TH240 ARGB 240mm (CL-W301-PL12SW-A) SNOW WHT EDITION', price: 249 },
+            { id: 'c127', name: 'WATER COOLING AIO THERMALTAKE TOUGHLIQUID ULTRA 240 240mm', price: 449 },
+            { id: 'c128', name: 'WATER COOLING AIO TRYX HOLO 360 ARGB 360mm (L-H360A-DM3M-G0K) BLK', price: 699 },
+            { id: 'c129', name: 'WATER COOLING AIO TRYX HOLO 360 ARGB 360mm (L-H360A-DM3M-G0W) WHT', price: 699 },
+            { id: 'c130', name: 'WATER COOLING AIO TRYX STAGE 360 ARGB 360mm (L-S360A-DM3M-G0K) BLK', price: 899 },
+            { id: 'c131', name: 'WATER COOLING AIO TRYX STAGE 360 ARGB 360mm (L-S360A-DM3M-G0W) WHT', price: 899 },
+            { id: 'c132', name: 'WATER COOLING AIO VALKYRIE A360 360mm WHT', price: 299 },
+            { id: 'c133', name: 'WATER COOLING AIO VALKYRIE B360-GT 360 LCD 360mm WHT', price: 449 },
+            { id: 'c134', name: 'WATER COOLING AIO VALKYRIE GL240 RGB 240mm WHT EDITION', price: 199 },
+            { id: 'c135', name: 'WATER COOLING AIO VALKYRIE GLA-360 360mm WHT', price: 349 },
+            { id: 'c136', name: 'WATER COOLING AIO VG P240 240mm BLK', price: 248 },
+            { id: 'c137', name: 'WATER COOLING AIO VG P240 240mm WHT', price: 248 },
+            { id: 'c138', name: 'WATER COOLING AIO VG P360 360mm BLK', price: 298 },
+            { id: 'c139', name: 'WATER COOLING AIO VG P360 360mm WHT', price: 298 }
+        ],
+            cases: [
+            { id: 'cs1', name: 'CASES AEROCOOL ATX INTERSTELLAR RGB BLK', price: 199, formFactor: 'ATX' },
+            { id: 'cs2', name: 'CASES AEROCOOL MATX VIEWPORT MINI TG WHT', price: 169, formFactor: 'mATX' },
+            { id: 'cs3', name: 'CASES ASUS ATX A31 TG BLK', price: 249, formFactor: 'ATX' },
+            { id: 'cs4', name: 'CASES ASUS ATX A31 TG WHT', price: 259, formFactor: 'ATX' },
+            { id: 'cs5', name: 'CASES ASUS ATX AP304 PRIME TG ARGB WHT', price: 509, formFactor: 'ATX' },
+            { id: 'cs6', name: 'CASES ASUS ATX GT502 TUF GAMING HORIZON TG WHT', price: 699, formFactor: 'ATX' },
+            { id: 'cs7', name: 'CASES ASUS ATX GT502 TUF GAMING TG WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs8', name: 'CASES ASUS ATX PROART PA401 WOOD TG BLK', price: 499, formFactor: 'ATX' },
+            { id: 'cs9', name: 'CASES ASUS ATX ROG STRIX HELIOS II GX601S HATSUNE MIKU EDITION', price: 1470, formFactor: 'ATX' },
+            { id: 'cs10', name: 'CASES ASUS ATX ROG STRIX HELIOS II GX601S WHT EDITION', price: 1399, formFactor: 'ATX' },
+            { id: 'cs11', name: 'CASES ASUS ATX TUF GAMING GT302 TG BLK', price: 569, formFactor: 'ATX' },
+            { id: 'cs12', name: 'CASES ASUS ATX TUF GAMING GT302 TG WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs13', name: 'CASES ASUS EATX PROART PA602 WOOD BLK', price: 1299, formFactor: 'EATX' },
+            { id: 'cs14', name: 'CASES ASUS EATX ROG CRONOX GR801 TG BLK', price: 1999, formFactor: 'EATX' },
+            { id: 'cs15', name: 'CASES ASUS EATX ROG CRONOX GR801 TG WHT', price: 2099, formFactor: 'EATX' },
+            { id: 'cs16', name: 'CASES ASUS EATX ROG GR20 EDITION 20 BLK', price: 2699, formFactor: 'EATX' },
+            { id: 'cs17', name: 'CASES ASUS EATX ROG HYPERION GR701 TG BLK', price: 1799, formFactor: 'EATX' },
+            { id: 'cs18', name: 'CASES ASUS EATX ROG HYPERION GR701 TG WHT', price: 1799, formFactor: 'EATX' },
+            { id: 'cs19', name: 'CASES ASUS MATX A21 PLUS TG WHT', price: 329, formFactor: 'mATX' },
+            { id: 'cs20', name: 'CASES ASUS MATX AP202 PRIME TG ARGB BLK', price: 349, formFactor: 'mATX' },
+            { id: 'cs21', name: 'CASES ASUS MATX AP202 PRIME TG ARGB WHT', price: 359, formFactor: 'mATX' },
+            { id: 'cs22', name: 'CASES AVF ATX GAMING FREAK CRONOS 510S TG (CRONOS-510S)', price: 79, formFactor: 'ATX' },
+            { id: 'cs23', name: 'CASES COOLER MASTER ATX ELITE 500 WITH ODD STEEL (CM-E500-KN5N-S00)', price: 189, formFactor: 'ATX' },
+            { id: 'cs24', name: 'CASES COOLER MASTER ATX ELITE 502 TG (E502-KGNN-S00) BLK', price: 249, formFactor: 'ATX' },
+            { id: 'cs25', name: 'CASES COOLER MASTER ATX ELITE 502 TG (E502-WGNN-S00) WHT', price: 249, formFactor: 'ATX' },
+            { id: 'cs26', name: 'CASES COOLER MASTER ATX MASTERBOX LITE 600 (MB600L-KGNN-S00) BLK', price: 259, formFactor: 'ATX' },
+            { id: 'cs27', name: 'CASES COOLER MASTER ATX MASTERBOX LITE 600 (MB600L-WGNN-S00) WHT', price: 259, formFactor: 'ATX' },
+            { id: 'cs28', name: 'CASES COOLER MASTER ATX MASTERBOX MB520 MESH (CM-MB520-WGNN-S00) WHT', price: 299, formFactor: 'ATX' },
+            { id: 'cs29', name: 'CASES COOLER MASTER ATX MASTERFRAME 360 PANORAMA TG (MF360-KINN-S00)', price: 699, formFactor: 'ATX' },
+            { id: 'cs30', name: 'CASES COOLER MASTER ATX MASTERFRAME 360 STAGE LCD TG (MF360-KHNN-S02)', price: 1099, formFactor: 'ATX' },
+            { id: 'cs31', name: 'CASES COOLER MASTER ATX MASTERFRAME 360 STAGE MIRROR TG (MF360-KHNN-S01)', price: 899, formFactor: 'ATX' },
+            { id: 'cs32', name: 'CASES COOLER MASTER ATX MASTERFRAME 600 (MF600-SGNN-S00) SIL', price: 799, formFactor: 'ATX' },
+            { id: 'cs33', name: 'CASES COOLER MASTER ATX QUBE 540 (Q540-LGNN-S00) MOONSTONE', price: 249, formFactor: 'ATX' },
+            { id: 'cs35', name: 'CASES COOLER MASTER MATX ELITE 301 LITE STEEL (E301L-KNNN-S01)', price: 159, formFactor: 'mATX' },
+            { id: 'cs36', name: 'CASES COOLER MASTER MATX QUBE 340 (Q340-KGNN-S00) BLK', price: 169, formFactor: 'mATX' },
+            { id: 'cs37', name: 'CASES COOLER MASTER MATX QUBE 340 (Q340-WGNN-S00) WHT', price: 169, formFactor: 'mATX' },
+            { id: 'cs38', name: 'CASES CORSAIR ATX 3000D AIRFLOW (CC-9011252-WW) WHT', price: 249, formFactor: 'ATX' },
+            { id: 'cs39', name: 'CASES CORSAIR ATX 3500X CALL OF DUTY BLACK OPS 6 EDITION TG BLK', price: 369, formFactor: 'ATX' },
+            { id: 'cs40', name: 'CASES CORSAIR ATX 4000D AIRFLOW (CC-9011201-WW) WHT', price: 299, formFactor: 'ATX' },
+            { id: 'cs41', name: 'CASES CORSAIR ATX 4000D FRAME ARGB TG (CC-9011297-WW) WHT', price: 449, formFactor: 'ATX' },
+            { id: 'cs42', name: 'CASES CORSAIR ATX 4000D FRAME TG (CC-9011312-WW) BLK', price: 399, formFactor: 'ATX' },
+            { id: 'cs43', name: 'CASES CORSAIR ATX 4500X RS-R ARGB TG (CC-9011314-WW) BLK', price: 599, formFactor: 'ATX' },
+            { id: 'cs44', name: 'CASES CORSAIR ATX 4500X RS-R ARGB TG (CC-9011315-WW) WHT', price: 599, formFactor: 'ATX' },
+            { id: 'cs45', name: 'CASES CORSAIR ATX 5400 RS-R AIR ARGB TG (CC-9011318-WW) BLK', price: 1049, formFactor: 'ATX' },
+            { id: 'cs46', name: 'CASES CORSAIR MATX 2500X TG WHT', price: 499, formFactor: 'mATX' },
+            { id: 'cs47', name: 'CASES CORSAIR MATX 2800X RS-R ARGB (CC-9011347-WW) BLK', price: 399, formFactor: 'mATX' },
+            { id: 'cs48', name: 'CASES CORSAIR MATX 2800X RS-R ARGB (CC-9011348-WW) WHT', price: 399, formFactor: 'mATX' },
+            { id: 'cs50', name: 'CASES DEEPCOOL ATX CH510 TG (R-CH510-WHNNE1-G-1) WHT', price: 199, formFactor: 'ATX' },
+            { id: 'cs51', name: 'CASES DEEPCOOL ATX CH560 DIGITAL TG (R-CH560-WHAPE4D-G-1) WHT', price: 399, formFactor: 'ATX' },
+            { id: 'cs52', name: 'CASES DEEPCOOL ATX CH780 TG (R-CH780-WHADE41-G-1) WHT', price: 769, formFactor: 'ATX' },
+            { id: 'cs53', name: 'CASES DEEPCOOL ATX CL660 TG (R-CL660-WHNNA0-G-1) WHT', price: 399, formFactor: 'ATX' },
+            { id: 'cs54', name: 'CASES DEEPCOOL ATX GENOME III TG (R-GENOME-BKALA3-G-3)', price: 1199, formFactor: 'ATX' },
+            { id: 'cs58', name: 'CASES DEEPCOOL MATX CG330 TG (R-CG330-WHNGM3-G) WHT', price: 209, formFactor: 'mATX' },
+            { id: 'cs59', name: 'CASES DEEPCOOL MATX CG380 TG (R-CG380-WHAGM3-G) WHT', price: 219, formFactor: 'mATX' },
+            { id: 'cs60', name: 'CASES DEEPCOOL MATX CH160 PLUS (R-CH160-BKNGM0-G)', price: 239, formFactor: 'mATX' },
+            { id: 'cs61', name: 'CASES DEEPCOOL MATX CH260 WOOD TG (R-CH260-BKNWM0-G-1) BLK', price: 289, formFactor: 'mATX' },
+            { id: 'cs62', name: 'CASES DEEPCOOL MATX CH260 WOOD TG (R-CH260-WHNWM0-G-1) WHT', price: 299, formFactor: 'mATX' },
+            { id: 'cs63', name: 'CASES DEEPCOOL MATX CH370 TG (R-CH370-WHNAM1-G-1) WHT', price: 249, formFactor: 'mATX' },
+            { id: 'cs64', name: 'CASES FRACTAL DESIGN ATX EPOCH TG (FD-C-EPO1A-02) BLK', price: 499, formFactor: 'ATX' },
+            { id: 'cs65', name: 'CASES FRACTAL DESIGN ATX EPOCH TG (FD-C-EPO1A-03) WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs66', name: 'CASES FRACTAL DESIGN ATX EPOCH TG RGB (FD-C-EPO1A-04) BLK', price: 599, formFactor: 'ATX' },
+            { id: 'cs67', name: 'CASES FRACTAL DESIGN ATX NORTH CHALK MESH (FD-C-NOR1C-03) WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs68', name: 'CASES FRACTAL DESIGN ATX NORTH CHALK TG CLEAR TINT (FD-C-NOR1C-04) WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs69', name: 'CASES FRACTAL DESIGN ATX NORTH XL CHALK MESH (FD-C-NOR1X-03) WHT', price: 699, formFactor: 'ATX' },
+            { id: 'cs71', name: 'CASES FSP ATX M580 W/7 ARGB FANS + VITA-850GM GOLD PSU BLK', price: 699, formFactor: 'ATX' },
+            { id: 'cs72', name: 'CASES FSP ATX M580 W/7 ARGB FANS + VITA-850GM GOLD PSU WHT', price: 699, formFactor: 'ATX' },
+            { id: 'cs73', name: 'CASES FSP MATX S190-BA W/5 ARGB FANS + 550W BRONZE PSU WHT', price: 299, formFactor: 'mATX' },
+            { id: 'cs74', name: 'CASES FSP MATX S190-BA W/5 ARGB FANS WHT', price: 169, formFactor: 'mATX' },
+            { id: 'cs75', name: 'CASES FSP MATX S380 W/6 ARGB FANS + VITA-750GM GOLD PSU WHT', price: 499, formFactor: 'mATX' },
+            { id: 'cs76', name: 'CASES GAMEMAX MATX CLAW 360 TG BLK', price: 209, formFactor: 'mATX' },
+            { id: 'cs77', name: 'CASES GAMEMAX MATX CLAW 360 TG WHT', price: 209, formFactor: 'mATX' },
+            { id: 'cs78', name: 'CASES HAVN ATX HS 420 TG (HS420-02) BLK', price: 799, formFactor: 'ATX' },
+            { id: 'cs79', name: 'CASES HAVN ATX HS 420 VGPU TG (HS420-03) WHT', price: 1099, formFactor: 'ATX' },
+            { id: 'cs80', name: 'CASES HYTE ATX X50 TG (CS-HYTE-X50G-TM) TARO MILK', price: 599, formFactor: 'ATX' },
+            { id: 'cs81', name: 'CASES HYTE ATX X50 TG (CS-HYTE-X50G-WW) SNOW WHT', price: 599, formFactor: 'ATX' },
+            { id: 'cs82', name: 'CASES HYTE ATX Y40 WITH RISER PCI-E 4.0 (CS-HYTE-Y40-BR) RED', price: 599, formFactor: 'ATX' },
+            { id: 'cs83', name: 'CASES HYTE ATX Y50 RGB TG (CS-HYTE-Y50RGB-BB) PITCH BLK', price: 499, formFactor: 'ATX' },
+            { id: 'cs84', name: 'CASES HYTE ATX Y50 RGB TG (CS-HYTE-Y50RGB-RB) BLK CHERRY', price: 499, formFactor: 'ATX' },
+            { id: 'cs85', name: 'CASES HYTE ATX Y50 RGB TG (CS-HYTE-Y50RGB-SM) STRAWBERRY MILK', price: 499, formFactor: 'ATX' },
+            { id: 'cs86', name: 'CASES HYTE ATX Y50 RGB TG (CS-HYTE-Y50RGB-TM) TARO MILK', price: 499, formFactor: 'ATX' },
+            { id: 'cs87', name: 'CASES HYTE ATX Y50 RGB TG (CS-HYTE-Y50RGB-WW) SNOW WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs88', name: 'CASES HYTE ATX Y60 WITH RISER PCI-E 4.0 (CS-HYTE-Y60-B) BLK', price: 849, formFactor: 'ATX' },
+            { id: 'cs89', name: 'CASES HYTE ATX Y70 TOUCH INFINITE WITH TOUCH SCREEN (CS-HYTE-Y70TI-RB) RED', price: 1799, formFactor: 'ATX' },
+            { id: 'cs90', name: 'CASES HYTE ATX Y70 TOUCH INFINITE WITH TOUCH SCREEN (CS-HYTE-Y70TTI-GWING) GUNDAM WING', price: 2099, formFactor: 'ATX' },
+            { id: 'cs91', name: 'CASES HYTE ATX Y70 WITH RISER PCI-E 4.0 (CS-HYTE-Y70-SM) STRAWBERRY MILK', price: 899, formFactor: 'ATX' },
+            { id: 'cs92', name: 'CASES IN WIN ATX 805C GOLD', price: 299, formFactor: 'ATX' },
+            { id: 'cs93', name: 'CASES INVASION ATX A-2000 TG BLK', price: 189, formFactor: 'ATX' },
+            { id: 'cs94', name: 'CASES INVASION ATX A-2000 TG WHT', price: 199, formFactor: 'ATX' },
+            { id: 'cs95', name: 'CASES INVASION ATX GENESIS TG WHT', price: 299, formFactor: 'ATX' },
+            { id: 'cs96', name: 'CASES INVASION ATX GT ONE TG BLK', price: 1399, formFactor: 'ATX' },
+            { id: 'cs97', name: 'CASES INVASION ATX GT-100 WHT', price: 299, formFactor: 'ATX' },
+            { id: 'cs98', name: 'CASES INVASION ATX GT205 TG BLK', price: 139, formFactor: 'ATX' },
+            { id: 'cs99', name: 'CASES INVASION ATX GT205 TG WHT', price: 179, formFactor: 'ATX' },
+            { id: 'cs100', name: 'CASES INVASION ATX IM-200 TG BLK', price: 129, formFactor: 'ATX' },
+            { id: 'cs101', name: 'CASES INVASION ATX LD-520 TG BLK', price: 99, formFactor: 'ATX' },
+            { id: 'cs102', name: 'CASES INVASION ATX LD-520 TG WHT', price: 139, formFactor: 'ATX' },
+            { id: 'cs103', name: 'CASES INVASION ATX SKYLINE TG BLK', price: 159, formFactor: 'ATX' },
+            { id: 'cs104', name: 'CASES INVASION MATX 5200C TG WHT', price: 159, formFactor: 'mATX' },
+            { id: 'cs105', name: 'CASES INVASION MATX AD-3000 TG BLK', price: 159, formFactor: 'mATX' },
+            { id: 'cs106', name: 'CASES INVASION MATX C1000 TG WHT', price: 139, formFactor: 'mATX' },
+            { id: 'cs107', name: 'CASES INVASION MATX C2000 TG BLK', price: 129, formFactor: 'mATX' },
+            { id: 'cs108', name: 'CASES INVASION MATX C2000 TG WHT', price: 139, formFactor: 'mATX' },
+            { id: 'cs109', name: 'CASES INVASION MATX C8000 TG WHT', price: 99, formFactor: 'mATX' },
+            { id: 'cs110', name: 'CASES INVASION MATX D-1000 TG WHT', price: 139, formFactor: 'mATX' },
+            { id: 'cs111', name: 'CASES INVASION MATX D-3000 TG WHT', price: 149, formFactor: 'mATX' },
+            { id: 'cs112', name: 'CASES INVASION MATX D-6000 TG BLK', price: 159, formFactor: 'mATX' },
+            { id: 'cs113', name: 'CASES INVASION MATX D-7000 TG BLK', price: 129, formFactor: 'mATX' },
+            { id: 'cs114', name: 'CASES INVASION MATX D-8000 TG WHT', price: 199, formFactor: 'mATX' },
+            { id: 'cs115', name: 'CASES INVASION MATX DC-100 TG BLK', price: 99, formFactor: 'mATX' },
+            { id: 'cs116', name: 'CASES INVASION MATX DC-300 TG BLK', price: 99, formFactor: 'mATX' },
+            { id: 'cs117', name: 'CASES INVASION MATX GENESIS M TG BLK', price: 259, formFactor: 'mATX' },
+            { id: 'cs118', name: 'CASES INVASION MATX GT-DB TG WHT', price: 99, formFactor: 'mATX' },
+            { id: 'cs119', name: 'CASES INVASION MATX H10 TG BLK', price: 119, formFactor: 'mATX' },
+            { id: 'cs120', name: 'CASES INVASION MATX H8 TG WHT', price: 109, formFactor: 'mATX' },
+            { id: 'cs121', name: 'CASES INVASION MATX L-1000 TG WHT', price: 139, formFactor: 'mATX' },
+            { id: 'cs122', name: 'CASES INVASION MATX LT-360 TG WHT', price: 149, formFactor: 'mATX' },
+            { id: 'cs123', name: 'CASES INVASION MATX M-1000 TG BLK', price: 109, formFactor: 'mATX' },
+            { id: 'cs124', name: 'CASES INVASION MATX M-2000 TG BLK', price: 109, formFactor: 'mATX' },
+            { id: 'cs125', name: 'CASES INVASION MATX MGC-07 TG WHT', price: 129, formFactor: 'mATX' },
+            { id: 'cs126', name: 'CASES INVASION MATX PLAIN TG GREEN', price: 149, formFactor: 'mATX' },
+            { id: 'cs127', name: 'CASES INVASION MATX S-1000 TG BLK', price: 109, formFactor: 'mATX' },
+            { id: 'cs128', name: 'CASES INVASION MATX S-1000 TG WHT', price: 109, formFactor: 'mATX' },
+            { id: 'cs129', name: 'CASES INVASION MATX S-2400 TG BLK', price: 109, formFactor: 'mATX' },
+            { id: 'cs130', name: 'CASES INVASION MATX S-3600 TG BLK', price: 129, formFactor: 'mATX' },
+            { id: 'cs131', name: 'CASES INVASION MATX W-2000 TG BLK', price: 139, formFactor: 'mATX' },
+            { id: 'cs132', name: 'CASES INVASION MATX W-2000 TG WHT', price: 149, formFactor: 'mATX' },
+            { id: 'cs133', name: 'CASES INVASION MATX XY-200 TG BLK', price: 129, formFactor: 'mATX' },
+            { id: 'cs134', name: 'CASES INVASION+ ATX ARES-G TG GREY', price: 249, formFactor: 'ATX' },
+            { id: 'cs135', name: 'CASES INVASION+ ATX ARES-G TG SIL', price: 249, formFactor: 'ATX' },
+            { id: 'cs136', name: 'CASES INVASION+ ATX ARES-P TG GREY', price: 249, formFactor: 'ATX' },
+            { id: 'cs137', name: 'CASES INVASION+ ATX ARES-P TG SIL', price: 249, formFactor: 'ATX' },
+            { id: 'cs138', name: 'CASES INVASION+ ATX E-20 TG BLK', price: 219, formFactor: 'ATX' },
+            { id: 'cs139', name: 'CASES INVASION+ ATX GENESIS TG BLK', price: 299, formFactor: 'ATX' },
+            { id: 'cs140', name: 'CASES INVASION+ ATX KRATOS LCD TG BLK', price: 289, formFactor: 'ATX' },
+            { id: 'cs141', name: 'CASES INVASION+ ATX KRATOS TG BLK', price: 209, formFactor: 'ATX' },
+            { id: 'cs142', name: 'CASES INVASION+ ATX KRATOS TG WHT', price: 219, formFactor: 'ATX' },
+            { id: 'cs143', name: 'CASES INVASION+ ATX PERSEUS TG BLK', price: 209, formFactor: 'ATX' },
+            { id: 'cs144', name: 'CASES INVASION+ ATX THANATOS TG BLK', price: 229, formFactor: 'ATX' },
+            { id: 'cs145', name: 'CASES INVASION+ ATX THANATOS TG WHT', price: 239, formFactor: 'ATX' },
+            { id: 'cs146', name: 'CASES INVASION+ ATX ZOOM TG BLK', price: 249, formFactor: 'ATX' },
+            { id: 'cs147', name: 'CASES INVASION+ ATX ZOOM TG WHT', price: 259, formFactor: 'ATX' },
+            { id: 'cs148', name: 'CASES INVASION+ MATX AETHER TG BLK', price: 209, formFactor: 'mATX' },
+            { id: 'cs149', name: 'CASES INVASION+ MATX AETHER TG WHT', price: 209, formFactor: 'mATX' },
+            { id: 'cs150', name: 'CASES INVASION+ MATX ATLAS TG BLK', price: 199, formFactor: 'mATX' },
+            { id: 'cs151', name: 'CASES INVASION+ MATX ATLAS TG WHT', price: 199, formFactor: 'mATX' },
+            { id: 'cs152', name: 'CASES INVASION+ MATX E10 TG BLK', price: 199, formFactor: 'mATX' },
+            { id: 'cs153', name: 'CASES INVASION+ MATX EREBUS TG BLK', price: 149, formFactor: 'mATX' },
+            { id: 'cs154', name: 'CASES INVASION+ MATX GENESIS M TG WHT', price: 259, formFactor: 'mATX' },
+            { id: 'cs155', name: 'CASES INVASION+ MATX HYPERION TG BLK', price: 199, formFactor: 'mATX' },
+            { id: 'cs156', name: 'CASES INVASION+ MATX T-1000 TG BLK', price: 269, formFactor: 'mATX' },
+            { id: 'cs157', name: 'CASES INVASION+ MATX THE VIEW 5 TG BLK', price: 199, formFactor: 'mATX' },
+            { id: 'cs158', name: 'CASES INVASION+ MATX THE VIEW 5 TG WHT', price: 209, formFactor: 'mATX' },
+            { id: 'cs159', name: 'CASES JONSBO ATX BO400 TG GRAY', price: 999, formFactor: 'ATX' },
+            { id: 'cs160', name: 'CASES JONSBO ATX D400 TG BLK', price: 269, formFactor: 'ATX' },
+            { id: 'cs161', name: 'CASES JONSBO ATX D400 TG WHT', price: 269, formFactor: 'ATX' },
+            { id: 'cs162', name: 'CASES JONSBO ATX TK-2 TG BLK', price: 499, formFactor: 'ATX' },
+            { id: 'cs163', name: 'CASES JONSBO ATX TK-2 TG WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs164', name: 'CASES JONSBO ATX X400 TG GRAY', price: 459, formFactor: 'ATX' },
+            { id: 'cs166', name: 'CASES JONSBO MATX D200 TG WHT', price: 229, formFactor: 'mATX' },
+            { id: 'cs167', name: 'CASES LIAN LI ATX ALPHA 550W WHT', price: 199, formFactor: 'ATX' },
+            { id: 'cs168', name: 'CASES LIAN LI ATX ALPHA 550X BLK', price: 199, formFactor: 'ATX' },
+            { id: 'cs169', name: 'CASES LIAN LI ATX LANCOOL 207 DIGITAL BLK', price: 449, formFactor: 'ATX' },
+            { id: 'cs170', name: 'CASES LIAN LI ATX LANCOOL 207 RGB WHT', price: 329, formFactor: 'ATX' },
+            { id: 'cs171', name: 'CASES LIAN LI ATX LANCOOL 217 RGB INF WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs172', name: 'CASES LIAN LI ATX LANCOOL 217 WHT', price: 449, formFactor: 'ATX' },
+            { id: 'cs173', name: 'CASES LIAN LI ATX PC-O11 AIR MINI WHT', price: 199, formFactor: 'ATX' },
+            { id: 'cs174', name: 'CASES LIAN LI ATX PC-O11 DYNAMIC EVO BLK', price: 599, formFactor: 'ATX' },
+            { id: 'cs175', name: 'CASES LIAN LI ATX PC-O11 DYNAMIC EVO RGB BLK', price: 699, formFactor: 'ATX' },
+            { id: 'cs176', name: 'CASES LIAN LI ATX PC-O11 DYNAMIC EVO RGB WHT', price: 709, formFactor: 'ATX' },
+            { id: 'cs177', name: 'CASES LIAN LI ATX PC-O11 DYNAMIC MINI V2 FLOW TG BLK', price: 439, formFactor: 'ATX' },
+            { id: 'cs178', name: 'CASES LIAN LI ATX PC-O11 DYNAMIC MINI V2 TG BLK', price: 399, formFactor: 'ATX' },
+            { id: 'cs179', name: 'CASES LIAN LI ATX PC-O11 DYNAMIC MINI V2 TG WHT', price: 409, formFactor: 'ATX' },
+            { id: 'cs180', name: 'CASES LIAN LI ATX PC-O11 VISION BLK', price: 349, formFactor: 'ATX' },
+            { id: 'cs181', name: 'CASES LIAN LI ATX PC-O11 VISION COMPACT BLK', price: 469, formFactor: 'ATX' },
+            { id: 'cs182', name: 'CASES LIAN LI ATX PC-O11 VISION COMPACT WHT', price: 489, formFactor: 'ATX' },
+            { id: 'cs183', name: 'CASES LIAN LI ATX PC-O11 VISION M BLK', price: 349, formFactor: 'ATX' },
+            { id: 'cs184', name: 'CASES LIAN LI ATX PC-O11 VISION M WHT', price: 369, formFactor: 'ATX' },
+            { id: 'cs185', name: 'CASES LIAN LI ATX SUP01 TG WHT', price: 299, formFactor: 'ATX' },
+            { id: 'cs186', name: 'CASES LIAN LI ATX VECTOR V100R TG BLK', price: 299, formFactor: 'ATX' },
+            { id: 'cs187', name: 'CASES LIAN LI ATX VECTOR V100R TG WHT', price: 309, formFactor: 'ATX' },
+            { id: 'cs189', name: 'CASES LIAN LI MATX A3 BLK', price: 299, formFactor: 'mATX' },
+            { id: 'cs190', name: 'CASES LIAN LI MATX A3 WHT', price: 309, formFactor: 'mATX' },
+            { id: 'cs191', name: 'CASES LIAN LI MATX B4 BLK', price: 299, formFactor: 'mATX' },
+            { id: 'cs192', name: 'CASES LIAN LI MATX B4 BLK WOODEN', price: 349, formFactor: 'mATX' },
+            { id: 'cs193', name: 'CASES LIAN LI MATX B4 WHT', price: 309, formFactor: 'mATX' },
+            { id: 'cs194', name: 'CASES LIAN LI MATX B4 WHT WOODEN', price: 359, formFactor: 'mATX' },
+            { id: 'cs195', name: 'CASES LIAN LI MATX VECTOR V100R MINI TG BLK', price: 249, formFactor: 'mATX' },
+            { id: 'cs196', name: 'CASES MBOX ATX CPC-G505 USB2.0', price: 79, formFactor: 'ATX' },
+            { id: 'cs197', name: 'CASES MBOX ATX MCG-X63 USB 3.0', price: 79, formFactor: 'ATX' },
+            { id: 'cs198', name: 'CASES MBOX MATX CPC-G507 USB3.0 WITH PSU', price: 119, formFactor: 'mATX' },
+            { id: 'cs199', name: 'CASES MBOX MATX MATRIX USB 3.0 WITH PSU', price: 129, formFactor: 'mATX' },
+            { id: 'cs200', name: 'CASES MBOX MATX MC10 USB 3.0', price: 69, formFactor: 'mATX' },
+            { id: 'cs201', name: 'CASES MBOX MATX MC20 USB 3.0', price: 69, formFactor: 'mATX' },
+            { id: 'cs202', name: 'CASES MBOX MATX SHADOW USB3.0 WITH PSU', price: 129, formFactor: 'mATX' },
+            { id: 'cs203', name: 'CASES MBOX MATX SPARTAN V3 USB3.0 WITH PSU', price: 99, formFactor: 'mATX' },
+            { id: 'cs204', name: 'CASES MBOX MATX SPARTAN V8 USB3.0 WITH PSU', price: 99, formFactor: 'mATX' },
+            { id: 'cs205', name: 'CASES MSI ATX MAG FORGE 100R', price: 199, formFactor: 'ATX' },
+            { id: 'cs206', name: 'CASES MSI ATX MAG FORGE 111R', price: 249, formFactor: 'ATX' },
+            { id: 'cs207', name: 'CASES MSI ATX MAG PANO 110R PZ BLK', price: 329, formFactor: 'ATX' },
+            { id: 'cs208', name: 'CASES MSI ATX MAG PANO 110R PZ WHT', price: 339, formFactor: 'ATX' },
+            { id: 'cs209', name: 'CASES MSI ATX MAG VAMPIRIC 300R ARGB TG', price: 399, formFactor: 'ATX' },
+            { id: 'cs210', name: 'CASES MSI ATX MPG GUNGNIR 300R AIRFLOW WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs211', name: 'CASES MSI MATX MAG PANO M100R PZ BLK', price: 349, formFactor: 'mATX' },
+            { id: 'cs212', name: 'CASES NZXT ATX H5 ELITE TG (CC-H51EW-01) WHT', price: 399, formFactor: 'ATX' },
+            { id: 'cs213', name: 'CASES NZXT ATX H5 FLOW 2024 TG (CC-H52FW-01) WHT', price: 299, formFactor: 'ATX' },
+            { id: 'cs214', name: 'CASES NZXT ATX H5 FLOW RGB TG (CC-H51FW-R1) WHT', price: 369, formFactor: 'ATX' },
+            { id: 'cs215', name: 'CASES NZXT ATX H5 FLOW TG (CC-H51FW-01) WHT', price: 299, formFactor: 'ATX' },
+            { id: 'cs216', name: 'CASES NZXT ATX H6 2026 TG (CC-H62FB-01) BLK', price: 399, formFactor: 'ATX' },
+            { id: 'cs217', name: 'CASES NZXT ATX H6 2026 TG (CC-H62FW-01) WHT', price: 399, formFactor: 'ATX' },
+            { id: 'cs218', name: 'CASES NZXT ATX H6 FLOW TG (CC-H61FB-01) BLK', price: 399, formFactor: 'ATX' },
+            { id: 'cs219', name: 'CASES NZXT ATX H6 RGB+ 2026 TG (CC-H62FB-P1) BLK', price: 699, formFactor: 'ATX' },
+            { id: 'cs220', name: 'CASES NZXT ATX H7 ELITE 2023 TG (CM-H71EW-02) WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs221', name: 'CASES NZXT ATX H7 FLOW 2024 (CM-H72FW-01) WHT', price: 449, formFactor: 'ATX' },
+            { id: 'cs222', name: 'CASES NZXT ATX H7 FLOW RGB 2024 (CM-H72FW-R1) WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs223', name: 'CASES NZXT ATX H9 FLOW RGB 2025 TG (CM-H92FW-R1) WHT', price: 669, formFactor: 'ATX' },
+            { id: 'cs224', name: 'CASES NZXT MATX H3 FLOW 2025 TG (CC-H31FW-01) WHT', price: 259, formFactor: 'mATX' },
+            { id: 'cs225', name: 'CASES PHANTEKS ATX EVOLV S2 TG DRGB BLK', price: 499, formFactor: 'ATX' },
+            { id: 'cs226', name: 'CASES PHANTEKS ATX EVOLV S2 TG DRGB WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs227', name: 'CASES PHANTEKS ATX EVOLV X2 TG DRGB (PH-ES524XTG_DMW01) WHT', price: 599, formFactor: 'ATX' },
+            { id: 'cs228', name: 'CASES PHANTEKS ATX EX5 TG DRGB SATIN BLK', price: 469, formFactor: 'ATX' },
+            { id: 'cs229', name: 'CASES SS MATX WORKBASE 300 USB 3.0 WITH PSU', price: 99, formFactor: 'mATX' },
+            { id: 'cs230', name: 'CASES SSUPD ATX XHUTTLE TG (G99.XTAX.00) BLK', price: 499, formFactor: 'ATX' },
+            { id: 'cs231', name: 'CASES TABLE VECTOR DESK MINI VDM01 (VDMRMVP01)', price: 499, formFactor: 'ATX' },
+            { id: 'cs232', name: 'CASES TCOMAS ATX FLW TG BLK', price: 559, formFactor: 'ATX' },
+            { id: 'cs233', name: 'CASES TCOMAS ATX UPG TG BLK', price: 579, formFactor: 'ATX' },
+            { id: 'cs234', name: 'CASES TECWARE MATX ESSENTIAL QUANTUM V2 W/380W PSU', price: 109, formFactor: 'mATX' },
+            { id: 'cs235', name: 'CASES THERMALTAKE ATX DIVIDER 500 TG ARGB (CA-1T4-00M6WN-01) WHT', price: 499, formFactor: 'ATX' },
+            { id: 'cs236', name: 'CASES THERMALTAKE ATX VERSA C22 RGB (CA-1G900M6WN00) WHT', price: 149, formFactor: 'ATX' },
+            { id: 'cs237', name: 'CASES THERMALTAKE ATX VERSA U21 (CA-1G500M1WN00)', price: 99, formFactor: 'ATX' },
+            { id: 'cs238', name: 'CASES TRYX ATX FLOVA F50 TG (C-F500F-FM1E-G0K) BLK', price: 599, formFactor: 'ATX' },
+            { id: 'cs239', name: 'CASES TRYX ATX FLOVA F50 TG (C-F500F-FM1E-G0W) WHT', price: 599, formFactor: 'ATX' },
+            { id: 'cs240', name: 'CASES TRYX EATX LUCA L70 TG (C-L700N-NN0H-G0W) WHT', price: 999, formFactor: 'EATX' },
+            { id: 'cs241', name: 'CASES VG ATX A400B TG WITH 5 ARGB FANS (5*12CM)', price: 89, formFactor: 'ATX' },
+            { id: 'cs242', name: 'CASES VG ATX A400W TG WITH 5 ARGB FANS (5*12CM) WHT', price: 238, formFactor: 'ATX' },
+            { id: 'cs243', name: 'CASES VG ATX A410 TG WITH 6 ARGB FANS (6*12CM)', price: 149, formFactor: 'ATX' },
+            { id: 'cs244', name: 'CASES VG ATX A420 GLASSY', price: 89, formFactor: 'ATX' },
+            { id: 'cs245', name: 'CASES VG ATX A420 MESH', price: 89, formFactor: 'ATX' },
+            { id: 'cs246', name: 'CASES VG ATX A421 MESH TG BLK', price: 89, formFactor: 'ATX' },
+            { id: 'cs247', name: 'CASES VG ATX A423 KEEPER TG BLK', price: 89, formFactor: 'ATX' },
+            { id: 'cs248', name: 'CASES VG ATX A430 HALF GLASS WHT', price: 69, formFactor: 'ATX' },
+            { id: 'cs249', name: 'CASES VG ATX R210 TG WITH 6 ARGB FANS (6*12CM)', price: 149, formFactor: 'ATX' },
+            { id: 'cs250', name: 'CASES VG ATX Z600 TG BLK', price: 0, formFactor: 'ATX' },
+            { id: 'cs251', name: 'CASES VG ATX Z600 TG WHT', price: 0, formFactor: 'ATX' },
+            { id: 'cs252', name: 'CASES VG ATX Z620 TG WITH 6 ARGB FANS (2*20CM/4*12CM)', price: 179, formFactor: 'ATX' },
+            { id: 'cs253', name: 'CASES VG ATX Z650 GLASS PLUS BLK', price: 99, formFactor: 'ATX' },
+            { id: 'cs254', name: 'CASES VG ATX Z660 UNMESH BLK', price: 99, formFactor: 'ATX' },
+            { id: 'cs255', name: 'CASES VG ATX Z800 INFINITY BLK', price: 79, formFactor: 'ATX' },
+            { id: 'cs256', name: 'CASES VG ATX Z810 CLEAR BLK', price: 159, formFactor: 'ATX' },
+            { id: 'cs257', name: 'CASES VG ATX Z810 CLEAR WHT', price: 159, formFactor: 'ATX' },
+            { id: 'cs258', name: 'CASES VG MATX A441 MODERN TG BLK', price: 79, formFactor: 'mATX' },
+            { id: 'cs259', name: 'CASES VG MATX R200 TG WITH 6 ARGB FANS (6*12CM)', price: 228, formFactor: 'mATX' },
+            { id: 'cs260', name: 'CASES VG MATX Z820 TG BLK', price: 149, formFactor: 'mATX' },
+            { id: 'cs261', name: 'CASES VG MATX Z820 TG WHT', price: 149, formFactor: 'mATX' },
+            { id: 'cs262', name: 'CASES X-FIVE MATX ELEGANT M8 WITH PSU', price: 169, formFactor: 'mATX' },
+            { id: 'cs263', name: 'CASES XERON ATX NEX C56 VC TG WHT', price: 239, formFactor: 'ATX' },
+            { id: 'cs264', name: 'CASES ZOTAC MATX GAMING ALLOY TG (ZC-MAB3F-01) BLK/GOLD', price: 209, formFactor: 'mATX' }
+        ],
+            // Shopee Retail Store Items
+            shopeeItems: [
+                { id: 'p101', name: 'GIGABYTE RTX 4060 EAGLE OC 8GB', price: 1479, category: 'GPU', inStock: true, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p102', name: 'KINGSTON FURY 16GB DDR4 3200MHz', price: 185, category: 'RAM', inStock: true, img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p103', name: 'SAMSUNG 980 PRO 1TB NVMe M.2', price: 420, category: 'SSD', inStock: true, img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p104', name: 'AULA F75 Wireless Mechanical Keyboard', price: 199, category: 'Aksesori', inStock: false, img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p105', name: 'VALKYRIE VK01 Panoramic Glass Case', price: 249, category: 'Casing', inStock: true, img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p106', name: 'AOC 24" 180Hz IPS Gaming Monitor', price: 439, category: 'Monitor', inStock: true, img: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80' }
+            ]
+        };
+
+        // State variables
+        let selectedSpec = {
+            cpu: null,
+            mobo: null,
+            ram: null,
+            ssd: null,
+            gpu: null,
+            psu: null,
+            cooler: null,
+            casing: null
+        };
+
+        // Initialize page setup
+        window.onload = function() {
+            initBuilderDropdowns();
+            renderShopeeProducts(inventoryDB.shopeeItems);
+        };
+
+        // Page Navigation Switcher
+        
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
+            document.getElementById('page-' + pageId).classList.remove('hidden');
+
+            // Reset navigation button highlights
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-brandCyan');
+                btn.classList.add('text-gray-300');
+            });
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('text-brandCyan');
+                activeNav.classList.remove('text-gray-300');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Toggle Pakej Cash / Ansuran Tabs
+        function togglePakejTab(type) {
+            const btnAnsuran = document.getElementById('tab-ansuran');
+            const btnCash = document.getElementById('tab-cash');
+            const boxAnsuran = document.getElementById('pakej-ansuran-container');
+            const boxCash = document.getElementById('pakej-cash-container');
+
+            if (type === 'ansuran') {
+                btnAnsuran.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition-all bg-brandCyan text-black';
+                btnCash.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition-all text-gray-400 hover:text-white';
+                boxAnsuran.classList.remove('hidden');
+                boxCash.classList.add('hidden');
+            } else {
+                btnCash.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition-all bg-brandCyan text-black';
+                btnAnsuran.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition-all text-gray-400 hover:text-white';
+                boxCash.classList.remove('hidden');
+                boxAnsuran.classList.add('hidden');
+            }
+        }
+
+        // --- CUSTOM PC BUILDER LOGIC ---
+        function initBuilderDropdowns() {
+            populateSelect('select-cpu', inventoryDB.cpus);
+            populateSelect('select-ssd', inventoryDB.ssds);
+            populateSelect('select-gpu', inventoryDB.gpus);
+            populateSelect('select-psu', inventoryDB.psus);
+            populateSelect('select-cooler', inventoryDB.coolers);
+            populateSelect('select-casing', inventoryDB.casings);
+        }
+
+        function populateSelect(elementId, items) {
+            const select = document.getElementById(elementId);
+            select.innerHTML = select.options[0].outerHTML; // Keep default placeholder
+            items.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.id;
+                opt.textContent = `${item.name} (RM ${item.price})`;
+                select.appendChild(opt);
+            });
+        }
+
+        function handleCpuChange() {
+            const cpuId = document.getElementById('select-cpu').value;
+            selectedSpec.cpu = inventoryDB.cpus.find(c => c.id === cpuId) || null;
+
+            // Reset dependent selections
+            selectedSpec.mobo = null;
+            selectedSpec.ram = null;
+
+            const moboSelect = document.getElementById('select-mobo');
+            const ramSelect = document.getElementById('select-ram');
+            ramSelect.disabled = true;
+            ramSelect.value = '';
+
+            if (selectedSpec.cpu) {
+                // Filter Motherboards matching CPU socket
+                const compatibleMobos = inventoryDB.mobos.filter(m => m.socket === selectedSpec.cpu.socket);
+                populateSelect('select-mobo', compatibleMobos);
+                moboSelect.disabled = false;
+                document.getElementById('mobo-badge').textContent = `Socket ${selectedSpec.cpu.socket}`;
+                document.getElementById('mobo-badge').className = 'text-[10px] bg-brandCyan/20 text-brandCyan px-2 py-0.5 rounded';
+            } else {
+                moboSelect.disabled = true;
+                moboSelect.value = '';
+                document.getElementById('mobo-badge').textContent = 'Pilih CPU dahulu';
+                document.getElementById('mobo-badge').className = 'text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded';
+            }
+
+            updateBuilderSummary();
+        }
+
+        function handleMoboChange() {
+            const moboId = document.getElementById('select-mobo').value;
+            selectedSpec.mobo = inventoryDB.mobos.find(m => m.id === moboId) || null;
+            selectedSpec.ram = null;
+
+            const ramSelect = document.getElementById('select-ram');
+
+            if (selectedSpec.mobo) {
+                // Filter RAM matching Motherboard DDR4 / DDR5
+                const compatibleRams = inventoryDB.rams.filter(r => r.type === selectedSpec.mobo.ramType);
+                populateSelect('select-ram', compatibleRams);
+                ramSelect.disabled = false;
+                document.getElementById('ram-badge').textContent = `Menyokong ${selectedSpec.mobo.ramType}`;
+                document.getElementById('ram-badge').className = 'text-[10px] bg-brandCyan/20 text-brandCyan px-2 py-0.5 rounded';
+
+                // Auto disable mATX casing if ATX motherboard selected
+                filterCasingsByMoboFormFactor(selectedSpec.mobo.formFactor);
+            } else {
+                ramSelect.disabled = true;
+                ramSelect.value = '';
+                document.getElementById('ram-badge').textContent = 'Pilih MOBO dahulu';
+                document.getElementById('ram-badge').className = 'text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded';
+            }
+
+            updateBuilderSummary();
+        }
+
+        function filterCasingsByMoboFormFactor(formFactor) {
+            const casingSelect = document.getElementById('select-casing');
+            casingSelect.innerHTML = casingSelect.options[0].outerHTML;
+
+            inventoryDB.cases.forEach(cs => {
+                const opt = document.createElement('option');
+                opt.value = cs.id;
+                
+                // If Motherboard is ATX, disable mATX casing
+                if (formFactor === 'ATX' && cs.formFactor === 'mATX') {
+                    opt.textContent = `${cs.name} (❌ Tidak Muat untuk ATX)`;
+                    opt.disabled = true;
+                } else {
+                    opt.textContent = `${cs.name} (RM ${cs.price})`;
+                }
+                casingSelect.appendChild(opt);
+            });
+
+            if (formFactor === 'ATX') {
+                document.getElementById('casing-badge').textContent = 'Mobo ATX dipilih (mATX Disable)';
+                document.getElementById('casing-badge').className = 'text-[10px] bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded';
+            } else {
+                document.getElementById('casing-badge').textContent = 'Sesuai Semua Casing';
+                document.getElementById('casing-badge').className = 'text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded';
+            }
+        }
+
+        function handleGpuChange() {
+            const gpuId = document.getElementById('select-gpu').value;
+            selectedSpec.gpu = inventoryDB.gpus.find(g => g.id === gpuId) || null;
+
+            // Auto calculate required wattage
+            if (selectedSpec.gpu) {
+                const recWatt = selectedSpec.gpu.recWatt;
+                document.getElementById('psu-badge').textContent = `Syor Min: ${recWatt}W`;
+                document.getElementById('psu-badge').className = 'text-[10px] bg-brandGreen/20 text-brandGreen px-2 py-0.5 rounded';
+            } else {
+                document.getElementById('psu-badge').textContent = 'Auto Calculate Wattage';
+                document.getElementById('psu-badge').className = 'text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded';
+            }
+
+            updateBuilderSummary();
+        }
+
+        function updateBuilderSummary() {
+            // Get values from selects
+            selectedSpec.ram = inventoryDB.rams.find(r => r.id === document.getElementById('select-ram').value) || null;
+            selectedSpec.ssd = inventoryDB.ssds.find(s => s.id === document.getElementById('select-ssd').value) || null;
+            selectedSpec.psu = inventoryDB.psus.find(p => p.id === document.getElementById('select-psu').value) || null;
+            selectedSpec.cooler = inventoryDB.coolers.find(c => c.id === document.getElementById('select-cooler').value) || null;
+            selectedSpec.casing = inventoryDB.cases.find(cs => cs.id === document.getElementById('select-casing').value) || null;
+
+            const listContainer = document.getElementById('builder-list');
+            listContainer.innerHTML = '';
+
+            let totalPrice = 0;
+            let count = 0;
+
+            const categories = [
+                { key: 'cpu', label: 'CPU' },
+                { key: 'mobo', label: 'MOBO' },
+                { key: 'ram', label: 'RAM' },
+                { key: 'ssd', label: 'SSD' },
+                { key: 'gpu', label: 'GPU' },
+                { key: 'psu', label: 'PSU' },
+                { key: 'cooler', label: 'Cooler' },
+                { key: 'casing', label: 'Casing' }
+            ];
+
+            categories.forEach(cat => {
+                const item = selectedSpec[cat.key];
+                if (item) {
+                    totalPrice += item.price;
+                    count++;
+                    const row = document.createElement('div');
+                    row.className = 'flex justify-between items-center py-1.5 border-b border-gray-800/50';
+                    row.innerHTML = `
+                        <div>
+                            <span class="text-brandCyan font-bold me-1">[${cat.label}]</span>
+                            <span class="text-white">${item.name}</span>
+                        </div>
+                        <span class="text-gray-400 font-mono">RM ${item.price}</span>
+                    `;
+                    listContainer.appendChild(row);
+                }
+            });
+
+            if (count === 0) {
+                listContainer.innerHTML = '<p class="text-gray-500 italic text-center py-6">Sila pilih komponen di sebelah kiri.</p>';
+            }
+
+            document.getElementById('builder-total-price').textContent = `RM ${totalPrice.toLocaleString()}`;
+        }
+
+        function resetBuilder() {
+            selectedSpec = { cpu: null, mobo: null, ram: null, ssd: null, gpu: null, psu: null, cooler: null, casing: null };
+            document.querySelectorAll('#page-builder select').forEach(sel => {
+                sel.value = '';
+            });
+            document.getElementById('select-mobo').disabled = true;
+            document.getElementById('select-ram').disabled = true;
+            updateBuilderSummary();
+        }
+
+        function sendCustomSpecWhatsapp() {
+            let specText = "*CUSTOM PC SPECIFICATION - VIEWNET*\n\n";
+            let totalPrice = 0;
+            let count = 0;
+
+            for (let k in selectedSpec) {
+                if (selectedSpec[k]) {
+                    specText += `• *${k.toUpperCase()}*: ${selectedSpec[k].name} (RM ${selectedSpec[k].price})\n`;
+                    totalPrice += selectedSpec[k].price;
+                    count++;
+                }
+            }
+
+            if (count === 0) {
+                alert("Sila pilih sekurang-kurangnya 1 barang spec!");
+                return;
+            }
+
+            specText += `\n*JUMLAH ANGGARAN*: RM ${totalPrice.toLocaleString()}\n\nHai admin, saya nak tanya tentang ketersediaan stok untuk spec ini!`;
+            window.open(`https://wa.me/60167866447?text=${encodeURIComponent(specText)}`, '_blank');
+        }
+
+        // --- KEDAI PARTS (SHOPEE STYLE) LOGIC ---
+        function renderShopeeProducts(products) {
+            const grid = document.getElementById('shopee-product-grid');
+            grid.innerHTML = '';
+
+            products.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between hover:border-brandCyan transition-all group';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-36 bg-gray-900 overflow-hidden">
+                            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold ${p.inStock ? 'bg-brandGreen text-black' : 'bg-red-500 text-white'}">
+                                ${p.inStock ? 'ADA STOK' : 'TIADA STOK'}
+                            </span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">${p.category}</span>
+                            <h4 class="text-xs font-bold text-white line-clamp-2">${p.name}</h4>
+                            <p class="font-gaming font-black text-brandCyan text-base">RM ${p.price}</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="orderViaWhatsapp('${p.name} (RM ${p.price})')" ${!p.inStock ? 'disabled' : ''} class="w-full py-2 rounded-xl bg-brandGreen text-black font-bold text-xs flex items-center justify-center gap-1 hover:bg-emerald-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                            <i class="fa-brands fa-whatsapp me-1"></i> Beli
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCategory(cat) {
+            if (cat === 'all') {
+                renderShopeeProducts(inventoryDB.shopeeItems);
+            } else {
+                const filtered = inventoryDB.shopeeItems.filter(i => i.category === cat);
+                renderShopeeProducts(filtered);
+            }
+        }
+
+        function filterShopeeProducts() {
+            const query = document.getElementById('shopee-search').value.toLowerCase();
+            const filtered = inventoryDB.shopeeItems.filter(i => i.name.toLowerCase().includes(query));
+            renderShopeeProducts(filtered);
+        }
+
+        function orderViaWhatsapp(itemTitle) {
+            const msg = `Hai Viewnet, saya berminat nak beli barang ini: ${itemTitle}`;
+            window.open(`https://wa.me/60167866447?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // --- ANSURAN FORM & UPLOADS LOGIC ---
+        function previewImage(input, previewId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(previewId).innerHTML = `
+                        <img src="${e.target.result}" class="h-16 mx-auto object-cover rounded-lg border border-brandGold">
+                        <p class="text-[10px] text-brandGreen font-bold mt-1">✓ File Ditambah</p>
+                    `;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function previewPayslip(input, previewId) {
+            if (input.files && input.files[0]) {
+                document.getElementById(previewId).innerHTML = `
+                    <i class="fa-solid fa-file-circle-check text-3xl text-brandGreen"></i>
+                    <p class="text-xs font-bold text-white">${input.files[0].name}</p>
+                    <p class="text-[10px] text-brandGreen">✓ Slip Gaji Dimuat Naik</p>
+                `;
+            }
+        }
+
+        function handleAnsuranSubmit(e) {
+            e.preventDefault();
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        function redirectAnsuranWhatsapp() {
+            const phone = document.getElementById('ansuran-phone').value || '';
+            const msg = `Hai Lagenda Computer, saya telah hantar borang semakan kelayakan ansuran di website (No Tel: ${phone}). Mohon semak dokumen saya. Terima kasih!`;
+            window.open(`https://wa.me/60167866447?text=${encodeURIComponent(msg)}`, '_blank');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
